@@ -1,0 +1,33 @@
+//
+// Prefix header for all source files of the 'Taply' target in the 'Taply' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif
+
+#define TAPLY_DEBUG 0
+
+#define CTRL_BTNPREV_TAG -1
+#define CTRL_BTNNEXT_TAG -2
+
+// Sets the amount of volume increase or decrease when the volume fader
+// is moved using keyboard shortcuts
+#define VOLUME_STEP 0.05
+
+#define FILETYPES @"mp3", @"aifc", @"aif", @"aiff", @"m4a", @"wav", @"wave"
+#define STR_CHOOSESOUNDSTOPLAY NSLocalizedStringFromTable(@"Choose sounds to play", @"dict", @"NSOpenPanel title")
+#define STR_ERRORPLAYING NSLocalizedStringFromTable(@"Error playing sound", @"dict", @"Error message when file is not a playable sound")
+#define STR_QUIT NSLocalizedStringFromTable(@"Quit", @"dict", @"Quit") 
+#define STR_REVEAL NSLocalizedStringFromTable(@"Reveal in Finder", @"dict", @"Reveal in Finder") 
+#define STR_OPENPREFS NSLocalizedStringFromTable(@"Open prefs", @"dict", @"Open preferences")
+#define STR_CLEARPLLIST NSLocalizedStringFromTable(@"Clear playlist", @"dict", @"Clear playlist")
+#define STR_FILEXOFY NSLocalizedStringFromTable(@"File %d of %d", @"dict", @"File %d of %d") 
+#define STR_REMBR_VOL NSLocalizedStringFromTable(@"Remember volume", @"dict", "Preference label: Remember volume")
+#define STR_RANDOM NSLocalizedStringFromTable(@"Random order", @"dict", "Preference label: Add in random order")
+
+#define STR_BTN_PAUSE NSLocalizedStringFromTable(@"Pause playback", @"dict", @"Button title: Pause / resume playback")
+#define STR_BTN_NEXT NSLocalizedStringFromTable(@"Play next file", @"dict", @"Button title: Play next file") 
+#define STR_BTN_PREV NSLocalizedStringFromTable(@"Play previous file", @"dict", @"Button title: Play previous file") 
+#define STR_BTN_REPEAT NSLocalizedStringFromTable(@"Repeat the current file", @"dict", @"Button title: Repeat the current file") 
+#define STR_BTN_HELP NSLocalizedStringFromTable(@"Help", @"dict", @"Button title: Help")

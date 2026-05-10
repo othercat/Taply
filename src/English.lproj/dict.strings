@@ -1,0 +1,38 @@
+/* NSOpenPanel title */
+"Choose sounds to play" = "Please choose one or more sound(s) to play";
+
+/* Error message when file is not a playable sound */
+"Error playing sound" = "Soundfile %@ is either not a sound file or its file format is not recognized by Taply.";
+
+/* Contextual Menu Item "Quit" */
+"Quit" = "Quit";
+
+/* Clear playlist */
+"Clear playlist" = "Clear playlist";
+
+/* File %d of %d  */
+"File %d of %d" = "File %d of %d";
+
+/* Contextual Menu Item "Reveal in Finder" */
+"Reveal in Finder" = "Reveal in Finder";
+
+/* Button title: Pause / resume playback */
+"Pause playback" = "Pause / resume playback";
+
+/* Button title: Play next file */
+"Play next file" = "Play next file";
+
+/* Button title: Play previous file */
+"Play previous file" = "Play previous file";
+
+/* "Button title: Repeat the current file" */
+"Repeat the current file" = "Repeat the current file";
+
+/* Button title: Help */
+"Help" = "Help / Info";
+
+"Open prefs" = "Preferences…";
+
+"Remember volume" = "Remember volume between launches";
+
+"Random order" = "Add files in random order to playlist";

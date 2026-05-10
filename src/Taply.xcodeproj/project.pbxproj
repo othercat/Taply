@@ -1,0 +1,641 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		221F061A067A154F0029B328 /* TaplyWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 221F0618067A154F0029B328 /* TaplyWindow.m */; };
+		221F061B067A154F0029B328 /* TaplyWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 221F0619067A154F0029B328 /* TaplyWindow.h */; };
+		221F061E067A18BB0029B328 /* AppController.h in Headers */ = {isa = PBXBuildFile; fileRef = 221F061C067A18BB0029B328 /* AppController.h */; };
+		221F061F067A18BB0029B328 /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 221F061D067A18BB0029B328 /* AppController.m */; };
+		222039931872B9D800940076 /* btn-vol-down.png in Resources */ = {isa = PBXBuildFile; fileRef = 2220398F1872B9D800940076 /* btn-vol-down.png */; };
+		222039941872B9D800940076 /* btn-vol-down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 222039901872B9D800940076 /* btn-vol-down@2x.png */; };
+		222039951872B9D800940076 /* btn-vol-up.png in Resources */ = {isa = PBXBuildFile; fileRef = 222039911872B9D800940076 /* btn-vol-up.png */; };
+		222039961872B9D800940076 /* btn-vol-up@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 222039921872B9D800940076 /* btn-vol-up@2x.png */; };
+		222039981872CF5D00940076 /* btn-loop@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 222039971872CF5D00940076 /* btn-loop@2x.png */; };
+		2220399B1872E00900940076 /* btn-pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 222039991872E00900940076 /* btn-pause.png */; };
+		2220399C1872E00900940076 /* btn-pause@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2220399A1872E00900940076 /* btn-pause@2x.png */; };
+		22231A3E0CF0A95200C26496 /* functions.h in Headers */ = {isa = PBXBuildFile; fileRef = 22231A3C0CF0A95200C26496 /* functions.h */; };
+		22231A3F0CF0A95200C26496 /* functions.m in Sources */ = {isa = PBXBuildFile; fileRef = 22231A3D0CF0A95200C26496 /* functions.m */; };
+		22231B250CF0EFAE00C26496 /* TaplyGradientBox.h in Headers */ = {isa = PBXBuildFile; fileRef = 22231B230CF0EFAE00C26496 /* TaplyGradientBox.h */; };
+		22231B260CF0EFAE00C26496 /* TaplyGradientBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 22231B240CF0EFAE00C26496 /* TaplyGradientBox.m */; };
+		2226B8BF07280985005E1EE2 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2226B8BE07280985005E1EE2 /* Carbon.framework */; };
+		223892EB18748B7100A6DFF9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 223892EA18748B7100A6DFF9 /* Images.xcassets */; };
+		2246C2870C610FC90099490D /* TaplyPositionBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 2246C2850C610FC90099490D /* TaplyPositionBar.h */; };
+		2246C2880C610FC90099490D /* TaplyPositionBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2246C2860C610FC90099490D /* TaplyPositionBar.m */; };
+		224D20CA0A9B8C730065719F /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 29B97319FDCFA39411CA2CEA /* MainMenu.nib */; };
+		225A494518FA89A000EC41BE /* Read me.html in Resources */ = {isa = PBXBuildFile; fileRef = 225A494318FA89A000EC41BE /* Read me.html */; };
+		225A494D18FA8C7600EC41BE /* help-2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 225A494B18FA8C7600EC41BE /* help-2x.png */; };
+		225A495318FA8D1100EC41BE /* dict.strings in Resources */ = {isa = PBXBuildFile; fileRef = 225A495118FA8D1100EC41BE /* dict.strings */; };
+		228B6ED9067B8B420096540D /* doc-mp3.icns in Resources */ = {isa = PBXBuildFile; fileRef = 228B6ED5067B8B420096540D /* doc-mp3.icns */; };
+		228B6EDA067B8B420096540D /* doc-wav.icns in Resources */ = {isa = PBXBuildFile; fileRef = 228B6ED6067B8B420096540D /* doc-wav.icns */; };
+		228B6EDB067B8B420096540D /* doc-aif.icns in Resources */ = {isa = PBXBuildFile; fileRef = 228B6ED7067B8B420096540D /* doc-aif.icns */; };
+		2297ED5C187230A900C29147 /* btn-play.png in Resources */ = {isa = PBXBuildFile; fileRef = 2297ED5A187230A900C29147 /* btn-play.png */; };
+		2297ED5D187230A900C29147 /* btn-play@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2297ED5B187230A900C29147 /* btn-play@2x.png */; };
+		2297ED601872332F00C29147 /* btn-next.png in Resources */ = {isa = PBXBuildFile; fileRef = 2297ED5E1872332F00C29147 /* btn-next.png */; };
+		2297ED611872332F00C29147 /* btn-next@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2297ED5F1872332F00C29147 /* btn-next@2x.png */; };
+		2297ED64187233AB00C29147 /* btn-prev.png in Resources */ = {isa = PBXBuildFile; fileRef = 2297ED62187233AB00C29147 /* btn-prev.png */; };
+		2297ED65187233AB00C29147 /* btn-prev@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2297ED63187233AB00C29147 /* btn-prev@2x.png */; };
+		22B96319067C7D2400C9A48C /* doc-mpeg-4.icns in Resources */ = {isa = PBXBuildFile; fileRef = 22B96318067C7D2400C9A48C /* doc-mpeg-4.icns */; };
+		22DC43050726F00B003BB824 /* TaplyPlaylist.h in Headers */ = {isa = PBXBuildFile; fileRef = 22DC43030726F00B003BB824 /* TaplyPlaylist.h */; };
+		22DC43060726F00B003BB824 /* TaplyPlaylist.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DC43040726F00B003BB824 /* TaplyPlaylist.m */; };
+		22E910BE18FAA8B60016E32D /* help.png in Resources */ = {isa = PBXBuildFile; fileRef = 22E910BC18FAA8B60016E32D /* help.png */; };
+		22E910C418FAAB630016E32D /* AppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 22E910C218FAAB630016E32D /* AppIcon.png */; };
+		22E910C518FAAB630016E32D /* AppIcon@2.png in Resources */ = {isa = PBXBuildFile; fileRef = 22E910C318FAAB630016E32D /* AppIcon@2.png */; };
+		22E9A35518FA8FD900D333AC /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 22E9A35418FA8FD900D333AC /* Info.plist */; };
+		22EED03F0D0ED5C40006B7C3 /* btn-loop.png in Resources */ = {isa = PBXBuildFile; fileRef = 22EED03E0D0ED5C40006B7C3 /* btn-loop.png */; };
+		35BE1E89086EC54900DD3BDE /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35BE1E88086EC54900DD3BDE /* CoreAudio.framework */; };
+		35BE1E8F086EC55400DD3BDE /* AudioUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35BE1E8E086EC55400DD3BDE /* AudioUnit.framework */; };
+		35BE1E93086EC55D00DD3BDE /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35BE1E92086EC55D00DD3BDE /* AudioToolbox.framework */; };
+		35BE1E97086EC56900DD3BDE /* QuickTime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35BE1E96086EC56900DD3BDE /* QuickTime.framework */; };
+		35EB0B9E08701A2D008F0000 /* QTSoundFilePlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 35EB0B9A08701A2D008F0000 /* QTSoundFilePlayer.m */; };
+		35EB0B9F08701A2D008F0000 /* QTSoundFilePlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 35EB0B9B08701A2D008F0000 /* QTSoundFilePlayer.h */; };
+		35EB0BA008701A2D008F0000 /* VirtualRingBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 35EB0B9C08701A2D008F0000 /* VirtualRingBuffer.m */; };
+		35EB0BA108701A2D008F0000 /* VirtualRingBuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = 35EB0B9D08701A2D008F0000 /* VirtualRingBuffer.h */; };
+		35F0829B088D1DC300F65880 /* Timer.h in Headers */ = {isa = PBXBuildFile; fileRef = 35F08299088D1DC300F65880 /* Timer.h */; };
+		35F0829C088D1DC300F65880 /* Timer.m in Sources */ = {isa = PBXBuildFile; fileRef = 35F0829A088D1DC300F65880 /* Timer.m */; };
+		8D1107280486CEB800E47090 /* Taply_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 32CA4F630368D1EE00C91783 /* Taply_Prefix.pch */; };
+		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
+		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
+		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		221F0618067A154F0029B328 /* TaplyWindow.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = TaplyWindow.m; sourceTree = "<group>"; };
+		221F0619067A154F0029B328 /* TaplyWindow.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = TaplyWindow.h; sourceTree = "<group>"; };
+		221F061C067A18BB0029B328 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = "<group>"; };
+		221F061D067A18BB0029B328 /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppController.m; sourceTree = "<group>"; };
+		2220398F1872B9D800940076 /* btn-vol-down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn-vol-down.png"; path = "Icons/btn-vol-down.png"; sourceTree = "<group>"; };
+		222039901872B9D800940076 /* btn-vol-down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn-vol-down@2x.png"; path = "Icons/btn-vol-down@2x.png"; sourceTree = "<group>"; };
+		222039911872B9D800940076 /* btn-vol-up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn-vol-up.png"; path = "Icons/btn-vol-up.png"; sourceTree = "<group>"; };
+		222039921872B9D800940076 /* btn-vol-up@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn-vol-up@2x.png"; path = "Icons/btn-vol-up@2x.png"; sourceTree = "<group>"; };
+		222039971872CF5D00940076 /* btn-loop@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn-loop@2x.png"; path = "Icons/btn-loop@2x.png"; sourceTree = "<group>"; };
+		222039991872E00900940076 /* btn-pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn-pause.png"; path = "Icons/btn-pause.png"; sourceTree = "<group>"; };
+		2220399A1872E00900940076 /* btn-pause@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn-pause@2x.png"; path = "Icons/btn-pause@2x.png"; sourceTree = "<group>"; };
+		22231A3C0CF0A95200C26496 /* functions.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = functions.h; sourceTree = "<group>"; };
+		22231A3D0CF0A95200C26496 /* functions.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = functions.m; sourceTree = "<group>"; };
+		22231B230CF0EFAE00C26496 /* TaplyGradientBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaplyGradientBox.h; sourceTree = "<group>"; };
+		22231B240CF0EFAE00C26496 /* TaplyGradientBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaplyGradientBox.m; sourceTree = "<group>"; };
+		2226B8BE07280985005E1EE2 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
+		223892EA18748B7100A6DFF9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = SOURCE_ROOT; };
+		2246C2850C610FC90099490D /* TaplyPositionBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaplyPositionBar.h; sourceTree = "<group>"; };
+		2246C2860C610FC90099490D /* TaplyPositionBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaplyPositionBar.m; sourceTree = "<group>"; };
+		225A494418FA89A000EC41BE /* English */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = English; path = "English.lproj/Read me.html"; sourceTree = "<group>"; };
+		225A494618FA89B500EC41BE /* de */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = de; path = "de.lproj/Read me.html"; sourceTree = "<group>"; };
+		225A494718FA89B600EC41BE /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = fr; path = "fr.lproj/Read me.html"; sourceTree = "<group>"; };
+		225A494818FA89B600EC41BE /* it */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = it; path = "it.lproj/Read me.html"; sourceTree = "<group>"; };
+		225A494C18FA8C7600EC41BE /* English */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = English; path = "English.lproj/help-2x.png"; sourceTree = "<group>"; };
+		225A494E18FA8C7A00EC41BE /* de */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = de; path = "de.lproj/help-2x.png"; sourceTree = "<group>"; };
+		225A494F18FA8C7C00EC41BE /* fr */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fr; path = "fr.lproj/help-2x.png"; sourceTree = "<group>"; };
+		225A495018FA8C7C00EC41BE /* it */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = it; path = "it.lproj/help-2x.png"; sourceTree = "<group>"; };
+		225A495218FA8D1100EC41BE /* English */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/dict.strings; sourceTree = "<group>"; };
+		225A495418FA8D1C00EC41BE /* fr */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/dict.strings; sourceTree = "<group>"; };
+		225A495518FA8D3100EC41BE /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/dict.strings; sourceTree = "<group>"; };
+		225A495618FA8D4900EC41BE /* de */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/dict.strings; sourceTree = "<group>"; };
+		225A495718FA8D6400EC41BE /* sv */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/dict.strings; sourceTree = "<group>"; };
+		228B6ED5067B8B420096540D /* doc-mp3.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = "doc-mp3.icns"; path = "Icons/doc-mp3.icns"; sourceTree = "<group>"; };
+		228B6ED6067B8B420096540D /* doc-wav.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = "doc-wav.icns"; path = "Icons/doc-wav.icns"; sourceTree = "<group>"; };
+		228B6ED7067B8B420096540D /* doc-aif.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = "doc-aif.icns"; path = "Icons/doc-aif.icns"; sourceTree = "<group>"; };
+		2297ED5A187230A900C29147 /* btn-play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn-play.png"; path = "Icons/btn-play.png"; sourceTree = "<group>"; };
+		2297ED5B187230A900C29147 /* btn-play@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn-play@2x.png"; path = "Icons/btn-play@2x.png"; sourceTree = "<group>"; };
+		2297ED5E1872332F00C29147 /* btn-next.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn-next.png"; path = "Icons/btn-next.png"; sourceTree = "<group>"; };
+		2297ED5F1872332F00C29147 /* btn-next@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn-next@2x.png"; path = "Icons/btn-next@2x.png"; sourceTree = "<group>"; };
+		2297ED62187233AB00C29147 /* btn-prev.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn-prev.png"; path = "Icons/btn-prev.png"; sourceTree = "<group>"; };
+		2297ED63187233AB00C29147 /* btn-prev@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn-prev@2x.png"; path = "Icons/btn-prev@2x.png"; sourceTree = "<group>"; };
+		22B96318067C7D2400C9A48C /* doc-mpeg-4.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = "doc-mpeg-4.icns"; path = "Icons/doc-mpeg-4.icns"; sourceTree = "<group>"; };
+		22DC43030726F00B003BB824 /* TaplyPlaylist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaplyPlaylist.h; sourceTree = "<group>"; };
+		22DC43040726F00B003BB824 /* TaplyPlaylist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaplyPlaylist.m; sourceTree = "<group>"; };
+		22E910BD18FAA8B60016E32D /* English */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = English; path = English.lproj/help.png; sourceTree = "<group>"; };
+		22E910BF18FAA8C30016E32D /* de */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = de; path = de.lproj/help.png; sourceTree = "<group>"; };
+		22E910C018FAA8C60016E32D /* fr */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fr; path = fr.lproj/help.png; sourceTree = "<group>"; };
+		22E910C118FAA8C70016E32D /* it */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = it; path = it.lproj/help.png; sourceTree = "<group>"; };
+		22E910C218FAAB630016E32D /* AppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon.png; sourceTree = "<group>"; };
+		22E910C318FAAB630016E32D /* AppIcon@2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon@2.png"; sourceTree = "<group>"; };
+		22E9A35418FA8FD900D333AC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		22EED03E0D0ED5C40006B7C3 /* btn-loop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn-loop.png"; path = "Icons/btn-loop.png"; sourceTree = "<group>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		29B97319FDCFA39411CA2CEA /* MainMenu.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = MainMenu.nib; sourceTree = "<group>"; };
+		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		32CA4F630368D1EE00C91783 /* Taply_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Taply_Prefix.pch; sourceTree = "<group>"; };
+		35BE1E88086EC54900DD3BDE /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = /System/Library/Frameworks/CoreAudio.framework; sourceTree = "<absolute>"; };
+		35BE1E8E086EC55400DD3BDE /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = /System/Library/Frameworks/AudioUnit.framework; sourceTree = "<absolute>"; };
+		35BE1E92086EC55D00DD3BDE /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = /System/Library/Frameworks/AudioToolbox.framework; sourceTree = "<absolute>"; };
+		35BE1E96086EC56900DD3BDE /* QuickTime.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickTime.framework; path = /System/Library/Frameworks/QuickTime.framework; sourceTree = "<absolute>"; };
+		35EB0B9A08701A2D008F0000 /* QTSoundFilePlayer.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = QTSoundFilePlayer.m; sourceTree = "<group>"; };
+		35EB0B9B08701A2D008F0000 /* QTSoundFilePlayer.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = QTSoundFilePlayer.h; sourceTree = "<group>"; };
+		35EB0B9C08701A2D008F0000 /* VirtualRingBuffer.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = VirtualRingBuffer.m; sourceTree = "<group>"; };
+		35EB0B9D08701A2D008F0000 /* VirtualRingBuffer.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = VirtualRingBuffer.h; sourceTree = "<group>"; };
+		35F08299088D1DC300F65880 /* Timer.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = Timer.h; sourceTree = "<group>"; };
+		35F0829A088D1DC300F65880 /* Timer.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = Timer.m; sourceTree = "<group>"; };
+		8D1107320486CEB800E47090 /* Taply.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Taply.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8D11072E0486CEB800E47090 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
+				2226B8BF07280985005E1EE2 /* Carbon.framework in Frameworks */,
+				35BE1E89086EC54900DD3BDE /* CoreAudio.framework in Frameworks */,
+				35BE1E8F086EC55400DD3BDE /* AudioUnit.framework in Frameworks */,
+				35BE1E93086EC55D00DD3BDE /* AudioToolbox.framework in Frameworks */,
+				35BE1E97086EC56900DD3BDE /* QuickTime.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				221F061C067A18BB0029B328 /* AppController.h */,
+				221F061D067A18BB0029B328 /* AppController.m */,
+				22DC43030726F00B003BB824 /* TaplyPlaylist.h */,
+				22DC43040726F00B003BB824 /* TaplyPlaylist.m */,
+				221F0619067A154F0029B328 /* TaplyWindow.h */,
+				221F0618067A154F0029B328 /* TaplyWindow.m */,
+				2246C2850C610FC90099490D /* TaplyPositionBar.h */,
+				2246C2860C610FC90099490D /* TaplyPositionBar.m */,
+				22231B230CF0EFAE00C26496 /* TaplyGradientBox.h */,
+				22231B240CF0EFAE00C26496 /* TaplyGradientBox.m */,
+				35F08299088D1DC300F65880 /* Timer.h */,
+				35F0829A088D1DC300F65880 /* Timer.m */,
+				221816CC0CF9983300509964 /* PlayBufferedSoundFile */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				35BE1E96086EC56900DD3BDE /* QuickTime.framework */,
+				35BE1E92086EC55D00DD3BDE /* AudioToolbox.framework */,
+				35BE1E8E086EC55400DD3BDE /* AudioUnit.framework */,
+				35BE1E88086EC54900DD3BDE /* CoreAudio.framework */,
+				2226B8BE07280985005E1EE2 /* Carbon.framework */,
+				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
+			);
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		1058C7A2FEA54F0111CA2CBB /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				29B97325FDCFA39411CA2CEA /* Foundation.framework */,
+				29B97324FDCFA39411CA2CEA /* AppKit.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8D1107320486CEB800E47090 /* Taply.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		221816CC0CF9983300509964 /* PlayBufferedSoundFile */ = {
+			isa = PBXGroup;
+			children = (
+				35EB0B9B08701A2D008F0000 /* QTSoundFilePlayer.h */,
+				35EB0B9A08701A2D008F0000 /* QTSoundFilePlayer.m */,
+				35EB0B9D08701A2D008F0000 /* VirtualRingBuffer.h */,
+				35EB0B9C08701A2D008F0000 /* VirtualRingBuffer.m */,
+			);
+			name = PlayBufferedSoundFile;
+			sourceTree = "<group>";
+		};
+		222F7CC507DA0A02009F8B88 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				222039991872E00900940076 /* btn-pause.png */,
+				2220399A1872E00900940076 /* btn-pause@2x.png */,
+				222039971872CF5D00940076 /* btn-loop@2x.png */,
+				2220398F1872B9D800940076 /* btn-vol-down.png */,
+				222039901872B9D800940076 /* btn-vol-down@2x.png */,
+				222039911872B9D800940076 /* btn-vol-up.png */,
+				222039921872B9D800940076 /* btn-vol-up@2x.png */,
+				2297ED62187233AB00C29147 /* btn-prev.png */,
+				2297ED63187233AB00C29147 /* btn-prev@2x.png */,
+				2297ED5E1872332F00C29147 /* btn-next.png */,
+				2297ED5F1872332F00C29147 /* btn-next@2x.png */,
+				2297ED5A187230A900C29147 /* btn-play.png */,
+				2297ED5B187230A900C29147 /* btn-play@2x.png */,
+				22EED03E0D0ED5C40006B7C3 /* btn-loop.png */,
+				228B6ED7067B8B420096540D /* doc-aif.icns */,
+				228B6ED5067B8B420096540D /* doc-mp3.icns */,
+				22B96318067C7D2400C9A48C /* doc-mpeg-4.icns */,
+				228B6ED6067B8B420096540D /* doc-wav.icns */,
+			);
+			name = Icons;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* Rac */ = {
+			isa = PBXGroup;
+			children = (
+				080E96DDFE201D6D7F000001 /* Classes */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = Rac;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				22231A3C0CF0A95200C26496 /* functions.h */,
+				22231A3D0CF0A95200C26496 /* functions.m */,
+				32CA4F630368D1EE00C91783 /* Taply_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				22E910C218FAAB630016E32D /* AppIcon.png */,
+				22E910C318FAAB630016E32D /* AppIcon@2.png */,
+				22E910BC18FAA8B60016E32D /* help.png */,
+				22E9A35418FA8FD900D333AC /* Info.plist */,
+				225A495118FA8D1100EC41BE /* dict.strings */,
+				225A494B18FA8C7600EC41BE /* help-2x.png */,
+				225A494318FA89A000EC41BE /* Read me.html */,
+				223892EA18748B7100A6DFF9 /* Images.xcassets */,
+				222F7CC507DA0A02009F8B88 /* Icons */,
+				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
+				29B97319FDCFA39411CA2CEA /* MainMenu.nib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
+				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		8D1107270486CEB800E47090 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D1107280486CEB800E47090 /* Taply_Prefix.pch in Headers */,
+				221F061B067A154F0029B328 /* TaplyWindow.h in Headers */,
+				221F061E067A18BB0029B328 /* AppController.h in Headers */,
+				22DC43050726F00B003BB824 /* TaplyPlaylist.h in Headers */,
+				35EB0B9F08701A2D008F0000 /* QTSoundFilePlayer.h in Headers */,
+				35EB0BA108701A2D008F0000 /* VirtualRingBuffer.h in Headers */,
+				35F0829B088D1DC300F65880 /* Timer.h in Headers */,
+				2246C2870C610FC90099490D /* TaplyPositionBar.h in Headers */,
+				22231A3E0CF0A95200C26496 /* functions.h in Headers */,
+				22231B250CF0EFAE00C26496 /* TaplyGradientBox.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		8D1107260486CEB800E47090 /* Taply */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 35BA51050910B0560035E1FD /* Build configuration list for PBXNativeTarget "Taply" */;
+			buildPhases = (
+				8D1107270486CEB800E47090 /* Headers */,
+				8D1107290486CEB800E47090 /* Resources */,
+				8D11072C0486CEB800E47090 /* Sources */,
+				8D11072E0486CEB800E47090 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Taply;
+			productInstallPath = "$(HOME)/Applications";
+			productName = Rac;
+			productReference = 8D1107320486CEB800E47090 /* Taply.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+			};
+			buildConfigurationList = 35BA51090910B0560035E1FD /* Build configuration list for PBXProject "Taply" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+				Italian,
+				Swedish,
+				sv,
+				de,
+				fr,
+				it,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* Rac */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8D1107260486CEB800E47090 /* Taply */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8D1107290486CEB800E47090 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				225A495318FA8D1100EC41BE /* dict.strings in Resources */,
+				224D20CA0A9B8C730065719F /* MainMenu.nib in Resources */,
+				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
+				222039931872B9D800940076 /* btn-vol-down.png in Resources */,
+				2220399C1872E00900940076 /* btn-pause@2x.png in Resources */,
+				228B6ED9067B8B420096540D /* doc-mp3.icns in Resources */,
+				222039951872B9D800940076 /* btn-vol-up.png in Resources */,
+				225A494D18FA8C7600EC41BE /* help-2x.png in Resources */,
+				228B6EDA067B8B420096540D /* doc-wav.icns in Resources */,
+				2297ED611872332F00C29147 /* btn-next@2x.png in Resources */,
+				223892EB18748B7100A6DFF9 /* Images.xcassets in Resources */,
+				22E910C418FAAB630016E32D /* AppIcon.png in Resources */,
+				2220399B1872E00900940076 /* btn-pause.png in Resources */,
+				228B6EDB067B8B420096540D /* doc-aif.icns in Resources */,
+				222039961872B9D800940076 /* btn-vol-up@2x.png in Resources */,
+				2297ED5C187230A900C29147 /* btn-play.png in Resources */,
+				2297ED5D187230A900C29147 /* btn-play@2x.png in Resources */,
+				22B96319067C7D2400C9A48C /* doc-mpeg-4.icns in Resources */,
+				222039941872B9D800940076 /* btn-vol-down@2x.png in Resources */,
+				222039981872CF5D00940076 /* btn-loop@2x.png in Resources */,
+				2297ED601872332F00C29147 /* btn-next.png in Resources */,
+				22E910C518FAAB630016E32D /* AppIcon@2.png in Resources */,
+				22E910BE18FAA8B60016E32D /* help.png in Resources */,
+				2297ED64187233AB00C29147 /* btn-prev.png in Resources */,
+				2297ED65187233AB00C29147 /* btn-prev@2x.png in Resources */,
+				225A494518FA89A000EC41BE /* Read me.html in Resources */,
+				22E9A35518FA8FD900D333AC /* Info.plist in Resources */,
+				22EED03F0D0ED5C40006B7C3 /* btn-loop.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D11072C0486CEB800E47090 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072D0486CEB800E47090 /* main.m in Sources */,
+				221F061A067A154F0029B328 /* TaplyWindow.m in Sources */,
+				221F061F067A18BB0029B328 /* AppController.m in Sources */,
+				22DC43060726F00B003BB824 /* TaplyPlaylist.m in Sources */,
+				35EB0B9E08701A2D008F0000 /* QTSoundFilePlayer.m in Sources */,
+				35EB0BA008701A2D008F0000 /* VirtualRingBuffer.m in Sources */,
+				35F0829C088D1DC300F65880 /* Timer.m in Sources */,
+				2246C2880C610FC90099490D /* TaplyPositionBar.m in Sources */,
+				22231A3F0CF0A95200C26496 /* functions.m in Sources */,
+				22231B260CF0EFAE00C26496 /* TaplyGradientBox.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		089C165CFE840E0CC02AAC07 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				089C165DFE840E0CC02AAC07 /* English */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		225A494318FA89A000EC41BE /* Read me.html */ = {
+			isa = PBXVariantGroup;
+			children = (
+				225A494418FA89A000EC41BE /* English */,
+				225A494618FA89B500EC41BE /* de */,
+				225A494718FA89B600EC41BE /* fr */,
+				225A494818FA89B600EC41BE /* it */,
+			);
+			name = "Read me.html";
+			sourceTree = "<group>";
+		};
+		225A494B18FA8C7600EC41BE /* help-2x.png */ = {
+			isa = PBXVariantGroup;
+			children = (
+				225A494C18FA8C7600EC41BE /* English */,
+				225A494E18FA8C7A00EC41BE /* de */,
+				225A494F18FA8C7C00EC41BE /* fr */,
+				225A495018FA8C7C00EC41BE /* it */,
+			);
+			name = "help-2x.png";
+			sourceTree = "<group>";
+		};
+		225A495118FA8D1100EC41BE /* dict.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				225A495218FA8D1100EC41BE /* English */,
+				225A495418FA8D1C00EC41BE /* fr */,
+				225A495518FA8D3100EC41BE /* it */,
+				225A495618FA8D4900EC41BE /* de */,
+				225A495718FA8D6400EC41BE /* sv */,
+			);
+			name = dict.strings;
+			sourceTree = "<group>";
+		};
+		22E910BC18FAA8B60016E32D /* help.png */ = {
+			isa = PBXVariantGroup;
+			children = (
+				22E910BD18FAA8B60016E32D /* English */,
+				22E910BF18FAA8C30016E32D /* de */,
+				22E910C018FAA8C60016E32D /* fr */,
+				22E910C118FAA8C70016E32D /* it */,
+			);
+			name = help.png;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		35BA51060910B0560035E1FD /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COPY_PHASE_STRIP = NO;
+				DEBUGGING_SYMBOLS = YES;
+				FRAMEWORK_SEARCH_PATHS = "";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_ENABLE_TRIGRAPHS = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Taply_Prefix.pch;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
+				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
+				GCC_WARN_UNKNOWN_PRAGMAS = NO;
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = Taply;
+				SDKROOT = macosx10.7;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+				WRAPPER_EXTENSION = app;
+				ZERO_LINK = YES;
+			};
+			name = Development;
+		};
+		35BA51070910B0560035E1FD /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = "";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_ENABLE_TRIGRAPHS = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Taply_Prefix.pch;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
+				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
+				GCC_WARN_UNKNOWN_PRAGMAS = NO;
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = Taply;
+				SDKROOT = macosx10.7;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+				WRAPPER_EXTENSION = app;
+				ZERO_LINK = NO;
+			};
+			name = Deployment;
+		};
+		35BA51080910B0560035E1FD /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = "";
+				GCC_ENABLE_TRIGRAPHS = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Taply_Prefix.pch;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
+				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
+				GCC_WARN_UNKNOWN_PRAGMAS = NO;
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = Taply;
+				SDKROOT = macosx10.7;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+				WRAPPER_EXTENSION = app;
+			};
+			name = Default;
+		};
+		35BA510A0910B0560035E1FD /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				SDKROOT = macosx10.6;
+			};
+			name = Development;
+		};
+		35BA510B0910B0560035E1FD /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				SDKROOT = macosx10.6;
+			};
+			name = Deployment;
+		};
+		35BA510C0910B0560035E1FD /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"INFOPLIST_FILE[sdk=*]" = Info.plist;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				SDKROOT = macosx10.6;
+			};
+			name = Default;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		35BA51050910B0560035E1FD /* Build configuration list for PBXNativeTarget "Taply" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				35BA51060910B0560035E1FD /* Development */,
+				35BA51070910B0560035E1FD /* Deployment */,
+				35BA51080910B0560035E1FD /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Deployment;
+		};
+		35BA51090910B0560035E1FD /* Build configuration list for PBXProject "Taply" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				35BA510A0910B0560035E1FD /* Development */,
+				35BA510B0910B0560035E1FD /* Deployment */,
+				35BA510C0910B0560035E1FD /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Deployment;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}
