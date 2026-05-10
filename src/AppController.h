@@ -3,7 +3,6 @@
 #import "TaplyWindow.h"
 #import "TaplyPlaylist.h"
 #import "AVSoundFilePlayer.h"
-#import "Timer.h"
 #import "TaplyPositionBar.h"
 #import "functions.h"
 
@@ -27,7 +26,7 @@
 	AVSoundFilePlayer *player;
 	unsigned int currentIndex;
 	TaplyPlaylist *playlist;
-	Timer *timer;
+	NSTimer *uiTimer;
 	BOOL playing;
 }
 
@@ -51,6 +50,9 @@
 -(IBAction)restartTrack:(id)sender;
 -(IBAction)decreaseVolume:(id)sender;
 -(IBAction)increaseVolume:(id)sender;
+-(void)startUITimer;
+-(void)stopUITimer;
+-(void)updatePlaybackUI:(NSTimer *)theTimer;
 
 #pragma mark D&D methods
 -(void)handleDraggedPath:(id)pathsArray;

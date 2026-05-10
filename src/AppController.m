@@ -32,7 +32,6 @@
 	[filename setBackgroundColor:[NSColor textBackgroundColor]];
 	[fileLength setBackgroundColor:[NSColor textBackgroundColor]];
 
-	timer = [Timer new];
 
     if (nil == [[NSUserDefaults standardUserDefaults] objectForKey:@"rememberVolume"]) {
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"rememberVolume"];
@@ -112,7 +111,6 @@
 -(void)setNewPlayerPosition:(NSNumber *)numberOfSeconds {
 	[player setPlaybackPosition:[numberOfSeconds floatValue]];
 	[positionBar setPosition:numberOfSeconds];
-	[timer setElapsedTime:numberOfSeconds];
 	if (!playing) {
 		[self playOrResume:self];
 		[buttonPlay setState:NSControlStateValueOff];
@@ -151,17 +149,10 @@
 		// Display the track's length
 		[fileLength setStringValue:CBTimeStringForSeconds(duration)];
 		
-		// Start the timer thread and pass the NSTextField to use as argument
-		NSDictionary *userInfo = [NSDictionary dictionaryWithObjectsAndKeys:elapsedSeconds, @"textfield",
-		                                                                 positionBar, @"positionBar",
-		                                         [NSNumber numberWithFloat:duration], @"duration",
-			                                    [playlist soundAtIndex:currentIndex], @"file",
-			                                                                          nil];
-
-		[timer setCurrentFile:[playlist soundAtIndex:currentIndex]];
-		[NSThread detachNewThreadSelector:@selector(timerLoop:)
-								 toTarget:timer
-							   withObject:userInfo];
+		// Start UI timer for elapsed time and progress bar updates
+		[positionBar setDuration:[NSNumber numberWithFloat:duration]];
+		[positionBar reset];
+		[self startUITimer];
 	} else {
 		// Unusable format >> Proceed to next
 		playing = NO;
@@ -295,7 +286,6 @@
 		if ([sender tag] == currentIndex) {
 			// Restart current track
 			[player setPlaybackPosition:0.0];
-			[timer resetTimer];
 			return;
 		}
 		currentIndex = [sender tag];
@@ -307,7 +297,7 @@
 		playing = NO;
 	}
 
-	[timer setCurrentFile:nil];
+	[self stopUITimer];
 	[player stop];
 
 	[self startPlay];
@@ -317,12 +307,12 @@
 	if (playing) {
 		playing = NO;
 		[player pause];
-		[timer setPaused:YES];
+		[self stopUITimer];
 	}
 	else {
 		playing = YES;
 		[player resume];
-		[timer setPaused:NO];
+		[self startUITimer];
 	}
 }
 
@@ -359,12 +349,11 @@
 
 	if (success && [buttonLoop state] == NSControlStateValueOn) {
 		// LOOP
-		[timer resetTimer];
-		[avPlayer play];		
+			[avPlayer play];		
 		return;
 	}
 
-	[timer setCurrentFile:nil];
+	[self stopUITimer];
 	[filename setStringValue:@""];
 	player = nil;
 
@@ -515,6 +504,32 @@
 
 - (void)concludeDragOperation:(id <NSDraggingInfo>)sender {
 	[[NSCursor arrowCursor] set];	
+}
+
+-(void)startUITimer {
+	if (uiTimer) {
+		[uiTimer invalidate];
+	}
+	uiTimer = [NSTimer scheduledTimerWithTimeInterval:0.05
+										   target:self
+										 selector:@selector(updatePlaybackUI:)
+										 userInfo:nil
+										  repeats:YES];
+}
+
+-(void)stopUITimer {
+	if (uiTimer) {
+		[uiTimer invalidate];
+		uiTimer = nil;
+	}
+}
+
+-(void)updatePlaybackUI:(NSTimer *)theTimer {
+	if (!player) return;
+	float pos = [player playbackPosition];
+	float dur = [player duration];
+	[elapsedSeconds setTitle:CBTimeStringForSeconds((int)pos)];
+	[positionBar setPosition:[NSNumber numberWithFloat:pos]];
 }
 
 @end

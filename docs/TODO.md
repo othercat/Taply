@@ -428,7 +428,7 @@ if ([p runModal] == NSModalResponseOK) {
 
 允许文件类型可先用 `allowedFileTypes`，如果迁移到更现代的 UniformTypeIdentifiers，再考虑 `allowedContentTypes`。不要在本步骤引入大范围 UI 重写。
 
-- [ ] **Step 5：避免后台线程直接更新 UI**
+- [x] **Step 5：避免后台线程直接更新 UI**  ✅ 2026-05-10
 
 当前 `Timer` 至少有一处从 detached thread 直接更新 UI：
 
@@ -437,17 +437,13 @@ if ([p runModal] == NSModalResponseOK) {
                            CBTimeStringForSeconds(elapsedTime += sleepTime)]];
 ```
 
-目标：
+已实现：
 
-- UI 更新全部回到 main thread。
-- 优先把 `Timer` 替换为 `AppController` 持有的 `NSTimer`。
-- elapsed time 从 `[player playbackPosition]` 派生，不再靠 sleep interval 累加。
-
-验收：
-
-- pause/resume 不漂移。
-- seek 后文字和 progress bar 立即更新。
-- 不再从后台线程直接修改 AppKit 控件。
+- 移除 `Timer` 类的 detached thread 用法，改为 `AppController` 持有的 `NSTimer`。
+- `NSTimer` 每 0.05s 在主线程触发 `updatePlaybackUI:`。
+- elapsed time 直接从 `[player playbackPosition]` 读取，不再靠 sleep 累加。
+- pause/resume 时 invalidate/restart timer。
+- seek 后文字和 progress bar 由 timer 自然更新。
 
 
 - [x] **Step 5：Dark Mode 适配**  ✅ 2026-05-10
