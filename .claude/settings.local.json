@@ -9,7 +9,14 @@
       "Bash(lipo *)",
       "Bash(git add *)",
       "Bash(git commit *)",
-      "Bash(/Applications/Xcode_16.4.app/Contents/Developer/usr/bin/xcodebuild -project Taply.xcodeproj -target Taply -configuration Deployment -sdk macosx ARCHS=\"x86_64 arm64\" ONLY_ACTIVE_ARCH=NO clean build)"
+      "Bash(/Applications/Xcode_16.4.app/Contents/Developer/usr/bin/xcodebuild -project Taply.xcodeproj -target Taply -configuration Deployment -sdk macosx ARCHS=\"x86_64 arm64\" ONLY_ACTIVE_ARCH=NO clean build)",
+      "Bash(/Applications/Xcode_16.4.app/Contents/Developer/usr/bin/xcodebuild -project Taply.xcodeproj -target Taply -configuration Development -sdk macosx ARCHS=\"x86_64 arm64\" ONLY_ACTIVE_ARCH=NO build)",
+      "Bash(plutil *)",
+      "Bash(xxd /Users/lirichard/Developer/SourceCodes/GithubRepos/Taply/src/Taply.xcodeproj/project.pbxproj)",
+      "Bash(/Applications/Xcode_16.4.app/Contents/Developer/usr/bin/xcodebuild -project Taply.xcodeproj -target Taply clean)",
+      "Bash(/usr/bin/plutil *)",
+      "Bash(/Applications/Xcode_16.4.app/Contents/Developer/usr/bin/xcodebuild *)",
+      "Bash(git reset *)"
     ]
   }
 }
