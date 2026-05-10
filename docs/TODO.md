@@ -474,7 +474,7 @@ if ([p runModal] == NSModalResponseOK) {
 - Modify: `src/functions.m`
 - Create: `docs/TESTING.md`
 
-- [ ] **Step 1：尽可能补 focused tests**
+- [x] **Step 1：尽可能补 focused tests**  ✅ 2026-05-10
 
 如果添加 Xcode test target 的成本可控，至少覆盖：
 
@@ -581,7 +581,7 @@ build/
 - manual smoke test checklist。
 - known limitations。
 
-- [ ] **Step 4：构建 universal app**
+- [x] **Step 4：构建 universal app**  ✅ 2026-05-10
 
 ```bash
 cd /Users/lirichard/Developer/SourceCodes/GithubRepos/Taply/src
@@ -872,13 +872,13 @@ PALDLL_DX9 是 Win32 / x86 C++ DLL 工作。未来整合必须定义：
 - [x] target settings 支持 Intel macOS 10.14  ✅ 2026-05-10+。
 - [x] target settings 支持 ARM macOS 11.0  ✅ 2026-05-10+。
 - [x] 不再链接 `QuickTime.framework`  ✅ 2026-05-10。
-- [ ] 不再链接 `Carbon.framework`，除非剩余符号有明确文档说明。
+- [x] 不再链接 `Carbon.framework`，除非剩余符号有明确文档说明。  ✅ 2026-05-10
 - [x] 可播放 MP3、M4A、WAV、AIFF 本地文件  ✅ 2026-05-10。
 - [x] Drag & drop 文件和文件夹工作  ✅ 2026-05-10。
 - [x] Open panel 文件选择工作  ✅ 2026-05-10。
 - [x] Pause / resume / seek / volume / loop / next / previous 工作  ✅ 2026-05-10。
 - [x] 关闭窗口后停止播放并干净退出  ✅ 2026-05-10。
-- [ ] `README.md` 与 `docs/TESTING.md` 说明如何复现构建和 smoke test。
+- [x] `README.md` 与 `docs/TESTING.md` 说明如何复现构建和 smoke test。  ✅ 2026-05-10
 - [ ] Phase 5 实现后，可选 MIDI preview 能在 Apple Silicon macOS 15+ 打开并 loop `.mid` 文件。
 - [ ] MIDI 文档明确区分 macOS preview playback 与 Windows S-YXG50 parity validation。
 
