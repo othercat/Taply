@@ -21,7 +21,9 @@
 		22231A3E0CF0A95200C26496 /* functions.h in Headers */ = {isa = PBXBuildFile; fileRef = 22231A3C0CF0A95200C26496 /* functions.h */; };
 		22231A3F0CF0A95200C26496 /* functions.m in Sources */ = {isa = PBXBuildFile; fileRef = 22231A3D0CF0A95200C26496 /* functions.m */; };
 		22231B250CF0EFAE00C26496 /* TaplyGradientBox.h in Headers */ = {isa = PBXBuildFile; fileRef = 22231B230CF0EFAE00C26496 /* TaplyGradientBox.h */; };
+		AA0000020000000000000003 /* AVSoundFilePlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = AA0000020000000000000001 /* AVSoundFilePlayer.h */; };
 		22231B260CF0EFAE00C26496 /* TaplyGradientBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 22231B240CF0EFAE00C26496 /* TaplyGradientBox.m */; };
+		AA0000020000000000000004 /* AVSoundFilePlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0000020000000000000002 /* AVSoundFilePlayer.m */; };
 		2226B8BF07280985005E1EE2 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2226B8BE07280985005E1EE2 /* Carbon.framework */; };
 		223892EB18748B7100A6DFF9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 223892EA18748B7100A6DFF9 /* Images.xcassets */; };
 		2246C2870C610FC90099490D /* TaplyPositionBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 2246C2850C610FC90099490D /* TaplyPositionBar.h */; };
@@ -50,7 +52,7 @@
 		35BE1E89086EC54900DD3BDE /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35BE1E88086EC54900DD3BDE /* CoreAudio.framework */; };
 		35BE1E8F086EC55400DD3BDE /* AudioUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35BE1E8E086EC55400DD3BDE /* AudioUnit.framework */; };
 		35BE1E93086EC55D00DD3BDE /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35BE1E92086EC55D00DD3BDE /* AudioToolbox.framework */; };
-		35BE1E97086EC56900DD3BDE /* QuickTime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35BE1E96086EC56900DD3BDE /* QuickTime.framework */; };
+		AA0000010000000000000002 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA0000010000000000000001 /* AVFoundation.framework */; };
 		35EB0B9E08701A2D008F0000 /* QTSoundFilePlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 35EB0B9A08701A2D008F0000 /* QTSoundFilePlayer.m */; };
 		35EB0B9F08701A2D008F0000 /* QTSoundFilePlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 35EB0B9B08701A2D008F0000 /* QTSoundFilePlayer.h */; };
 		35EB0BA008701A2D008F0000 /* VirtualRingBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 35EB0B9C08701A2D008F0000 /* VirtualRingBuffer.m */; };
@@ -126,11 +128,9 @@
 		35BE1E88086EC54900DD3BDE /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = /System/Library/Frameworks/CoreAudio.framework; sourceTree = "<absolute>"; };
 		35BE1E8E086EC55400DD3BDE /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = /System/Library/Frameworks/AudioUnit.framework; sourceTree = "<absolute>"; };
 		35BE1E92086EC55D00DD3BDE /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = /System/Library/Frameworks/AudioToolbox.framework; sourceTree = "<absolute>"; };
-		35BE1E96086EC56900DD3BDE /* QuickTime.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickTime.framework; path = /System/Library/Frameworks/QuickTime.framework; sourceTree = "<absolute>"; };
-		35EB0B9A08701A2D008F0000 /* QTSoundFilePlayer.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = QTSoundFilePlayer.m; sourceTree = "<group>"; };
-		35EB0B9B08701A2D008F0000 /* QTSoundFilePlayer.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = QTSoundFilePlayer.h; sourceTree = "<group>"; };
-		35EB0B9C08701A2D008F0000 /* VirtualRingBuffer.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = VirtualRingBuffer.m; sourceTree = "<group>"; };
-		35EB0B9D08701A2D008F0000 /* VirtualRingBuffer.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = VirtualRingBuffer.h; sourceTree = "<group>"; };
+		AA0000010000000000000001 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = /System/Library/Frameworks/AVFoundation.framework; sourceTree = "<absolute>"; };
+		AA0000020000000000000001 /* AVSoundFilePlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVSoundFilePlayer.h; sourceTree = "<group>"; };
+		AA0000020000000000000002 /* AVSoundFilePlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVSoundFilePlayer.m; sourceTree = "<group>"; };
 		35F08299088D1DC300F65880 /* Timer.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = Timer.h; sourceTree = "<group>"; };
 		35F0829A088D1DC300F65880 /* Timer.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = Timer.m; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Taply.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Taply.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -146,7 +146,7 @@
 				35BE1E89086EC54900DD3BDE /* CoreAudio.framework in Frameworks */,
 				35BE1E8F086EC55400DD3BDE /* AudioUnit.framework in Frameworks */,
 				35BE1E93086EC55D00DD3BDE /* AudioToolbox.framework in Frameworks */,
-				35BE1E97086EC56900DD3BDE /* QuickTime.framework in Frameworks */,
+				AA0000010000000000000002 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,7 +168,7 @@
 				22231B240CF0EFAE00C26496 /* TaplyGradientBox.m */,
 				35F08299088D1DC300F65880 /* Timer.h */,
 				35F0829A088D1DC300F65880 /* Timer.m */,
-				221816CC0CF9983300509964 /* PlayBufferedSoundFile */,
+				AA0000030000000000000001 /* AVSoundFilePlayer */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -176,7 +176,7 @@
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				35BE1E96086EC56900DD3BDE /* QuickTime.framework */,
+				AA0000010000000000000001 /* AVFoundation.framework */,
 				35BE1E92086EC55D00DD3BDE /* AudioToolbox.framework */,
 				35BE1E8E086EC55400DD3BDE /* AudioUnit.framework */,
 				35BE1E88086EC54900DD3BDE /* CoreAudio.framework */,
@@ -203,15 +203,13 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		221816CC0CF9983300509964 /* PlayBufferedSoundFile */ = {
+		AA0000030000000000000001 /* AVSoundFilePlayer */ = {
 			isa = PBXGroup;
 			children = (
-				35EB0B9B08701A2D008F0000 /* QTSoundFilePlayer.h */,
-				35EB0B9A08701A2D008F0000 /* QTSoundFilePlayer.m */,
-				35EB0B9D08701A2D008F0000 /* VirtualRingBuffer.h */,
-				35EB0B9C08701A2D008F0000 /* VirtualRingBuffer.m */,
+				AA0000020000000000000001 /* AVSoundFilePlayer.h */,
+				AA0000020000000000000002 /* AVSoundFilePlayer.m */,
 			);
-			name = PlayBufferedSoundFile;
+			name = AVSoundFilePlayer;
 			sourceTree = "<group>";
 		};
 		222F7CC507DA0A02009F8B88 /* Icons */ = {
@@ -300,8 +298,7 @@
 				221F061B067A154F0029B328 /* TaplyWindow.h in Headers */,
 				221F061E067A18BB0029B328 /* AppController.h in Headers */,
 				22DC43050726F00B003BB824 /* TaplyPlaylist.h in Headers */,
-				35EB0B9F08701A2D008F0000 /* QTSoundFilePlayer.h in Headers */,
-				35EB0BA108701A2D008F0000 /* VirtualRingBuffer.h in Headers */,
+				AA0000020000000000000003 /* AVSoundFilePlayer.h in Headers */,
 				35F0829B088D1DC300F65880 /* Timer.h in Headers */,
 				2246C2870C610FC90099490D /* TaplyPositionBar.h in Headers */,
 				22231A3E0CF0A95200C26496 /* functions.h in Headers */,
@@ -411,8 +408,7 @@
 				221F061A067A154F0029B328 /* TaplyWindow.m in Sources */,
 				221F061F067A18BB0029B328 /* AppController.m in Sources */,
 				22DC43060726F00B003BB824 /* TaplyPlaylist.m in Sources */,
-				35EB0B9E08701A2D008F0000 /* QTSoundFilePlayer.m in Sources */,
-				35EB0BA008701A2D008F0000 /* VirtualRingBuffer.m in Sources */,
+				AA0000020000000000000004 /* AVSoundFilePlayer.m in Sources */,
 				35F0829C088D1DC300F65880 /* Timer.m in Sources */,
 				2246C2880C610FC90099490D /* TaplyPositionBar.m in Sources */,
 				22231A3F0CF0A95200C26496 /* functions.m in Sources */,
@@ -482,13 +478,12 @@
 		35BA51060910B0560035E1FD /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COPY_PHASE_STRIP = NO;
 				DEBUGGING_SYMBOLS = YES;
 				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_ENABLE_TRIGRAPHS = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -501,11 +496,12 @@
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = "";
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = Taply;
-				SDKROOT = macosx10.7;
+				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				WARNING_CFLAGS = (
 					"-Wmost",
@@ -513,18 +509,16 @@
 					"-Wno-unknown-pragmas",
 				);
 				WRAPPER_EXTENSION = app;
-				ZERO_LINK = YES;
 			};
 			name = Development;
 		};
 		35BA51070910B0560035E1FD /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = "";
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_ENABLE_TRIGRAPHS = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -536,11 +530,12 @@
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = "";
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = Taply;
-				SDKROOT = macosx10.7;
+				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				WARNING_CFLAGS = (
 					"-Wmost",
@@ -548,14 +543,13 @@
 					"-Wno-unknown-pragmas",
 				);
 				WRAPPER_EXTENSION = app;
-				ZERO_LINK = NO;
 			};
 			name = Deployment;
 		};
 		35BA51080910B0560035E1FD /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_ENABLE_TRIGRAPHS = NO;
@@ -569,11 +563,11 @@
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = "";
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = Taply;
-				SDKROOT = macosx10.7;
+				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				WARNING_CFLAGS = (
 					"-Wmost",
@@ -587,28 +581,27 @@
 		35BA510A0910B0560035E1FD /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				SDKROOT = macosx10.6;
+				ARCHS = "$(ARCHS_STANDARD)";
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				SDKROOT = macosx;
 			};
 			name = Development;
 		};
 		35BA510B0910B0560035E1FD /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				SDKROOT = macosx10.6;
+				ARCHS = "$(ARCHS_STANDARD)";
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				SDKROOT = macosx;
 			};
 			name = Deployment;
 		};
 		35BA510C0910B0560035E1FD /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"INFOPLIST_FILE[sdk=*]" = Info.plist;
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				SDKROOT = macosx10.6;
+				ARCHS = "$(ARCHS_STANDARD)";
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				SDKROOT = macosx;
 			};
 			name = Default;
 		};

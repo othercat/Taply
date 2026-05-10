@@ -9,10 +9,10 @@
 					defer:(BOOL)flag {
 
 	if (self = [super initWithContentRect:contentRect
-	                  styleMask:NSTitledWindowMask |
-					            NSUtilityWindowMask |
-								NSClosableWindowMask |
-								NSMiniaturizableWindowMask
+	                  styleMask:NSWindowStyleMaskTitled |
+					            NSWindowStyleMaskUtilityWindow |
+								NSWindowStyleMaskClosable |
+								NSWindowStyleMaskMiniaturizable
 	                  backing:NSBackingStoreBuffered
 	                  defer:NO]) {
 

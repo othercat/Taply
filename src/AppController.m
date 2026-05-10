@@ -23,7 +23,7 @@
 
 	// Register for Drag&Drop
 	[window setDelegate:self];
-	[window registerForDraggedTypes:[NSArray arrayWithObject:NSFilenamesPboardType]];
+	[window registerForDraggedTypes:@[NSPasteboardTypeFileURL]];
 
     [prefsRememberVolume setTitle:STR_REMBR_VOL];
     [prefsRandomOrder setTitle:STR_RANDOM];
@@ -111,28 +111,28 @@
 	[timer setElapsedTime:numberOfSeconds];
 	if (!playing) {
 		[self playOrResume:self];
-		[buttonPlay setState:NSOffState];
+		[buttonPlay setState:NSControlStateValueOff];
 	}
 }
 
 -(void)startPlay {
 
-	QTSoundFilePlayer *qtPlayer;
+	AVSoundFilePlayer *avPlayer;
 	
 	if (currentIndex >= [playlist count]) {
 		// Nothing more to play >> Quit
 		[NSApp terminate:self];
 	}
 
-	qtPlayer = [[QTSoundFilePlayer alloc] initWithContentsOfFile:[playlist soundAtIndex:currentIndex]];
-	[qtPlayer setDelegate:self];
-	[qtPlayer setVolume:[volumeSlider floatValue]];
-	[qtPlayer play];
+	avPlayer = [[AVSoundFilePlayer alloc] initWithContentsOfFile:[playlist soundAtIndex:currentIndex]];
+	[avPlayer setDelegate:self];
+	[avPlayer setVolume:[volumeSlider floatValue]];
+	[avPlayer play];
 
-	if ([qtPlayer isPlaying]) {
+	if ([avPlayer isPlaying]) {
 		float duration;
 		playing = YES;
-		[buttonPlay setState: NSOffState];
+		[buttonPlay setState: NSControlStateValueOff];
 
 		NSImage *icon = [[NSWorkspace sharedWorkspace] iconForFile:[playlist soundAtIndex:currentIndex]];
 		[icon setSize:NSMakeSize(32, 32)];
@@ -140,8 +140,8 @@
 		[fileIcon setImage:icon];
 
 		[self setFilename];
-		duration = [qtPlayer duration];
-		player = qtPlayer;
+		duration = [avPlayer duration];
+		player = avPlayer;
 		[self updateButtons];
 		
 		// Display the track's length
@@ -161,9 +161,9 @@
 	} else {
 		// Unusable format >> Proceed to next
 		playing = NO;
-		[buttonPlay setState: NSOnState];
+		[buttonPlay setState: NSControlStateValueOn];
 		NSString *_filename = [NSString stringWithString:[[playlist soundAtIndex:currentIndex] lastPathComponent]];
-		[qtPlayer release];
+		[avPlayer release];
 		[elapsedSeconds setTitle:@""];
 		[playlist remove:currentIndex];
 		NSBeginAlertSheet(nil, @"OK", nil, nil, window, self,
@@ -231,7 +231,7 @@
 	}
 
 	// Make the current file selected
-	[[cMenu itemAtIndex:currentIndex] setState:NSOnState];
+	[[cMenu itemAtIndex:currentIndex] setState:NSControlStateValueOn];
 
 	// Add separator
 	[cMenu insertItem:[NSMenuItem separatorItem] atIndex: num];
@@ -350,13 +350,13 @@
 #pragma mark -
 #pragma mark Delegate Methods
 
-- (void)qtSoundFilePlayer:(QTSoundFilePlayer *)qtPlayer
+- (void)avSoundFilePlayer:(AVSoundFilePlayer *)avPlayer
 		 didFinishPlaying:(BOOL)success {
 
-	if (success && [buttonLoop state] == NSOnState) {
+	if (success && [buttonLoop state] == NSControlStateValueOn) {
 		// LOOP
 		[timer resetTimer];
-		[qtPlayer play];		
+		[avPlayer play];		
 		return;
 	}
 
@@ -388,8 +388,14 @@
 		[p setCanChooseFiles:YES];
 		[p setResolvesAliases:YES];
 		[p setTitle:STR_CHOOSESOUNDSTOPLAY];
-		if (NSOKButton == [p runModalForTypes:[NSArray arrayWithObjects:FILETYPES, nil]]) {
-			[self handleDraggedPath:[p filenames]];
+		if ([p runModal] == NSModalResponseOK) {
+			NSMutableArray *paths = [NSMutableArray arrayWithCapacity:[[p URLs] count]];
+			for (NSURL *url in [p URLs]) {
+				if ([url isFileURL]) {
+					[paths addObject:[url path]];
+				}
+			}
+			[self handleDraggedPath:paths];
 		}
 		else {
 			[NSApp terminate:self];
@@ -408,16 +414,16 @@
 #pragma mark Drag&Drop Methods
 
 -(unsigned int) draggingEntered:(id <NSDraggingInfo>)sender {	
-	SetThemeCursor(kThemeCopyArrowCursor);
+	[[NSCursor dragCopyCursor] set];
 	return NSDragOperationGeneric;
 }
 
 -(void)draggingExited:(id <NSDraggingInfo>)sender {	
-	SetThemeCursor(kThemeArrowCursor);
+	[[NSCursor arrowCursor] set];
 }
 
 - (unsigned int) draggingUpdated:(id <NSDraggingInfo>)sender {	
-	SetThemeCursor(kThemeCopyArrowCursor);
+	[[NSCursor dragCopyCursor] set];
 	return NSDragOperationEvery;
 }
 
@@ -426,14 +432,26 @@
 	// Get the pasteboard involved in the drag
 	NSPasteboard *p = [sender draggingPasteboard];
 	
-	// Make sure a filename can be extracted and return, if not
-	if (![[p types] containsObject:@"NSFilenamesPboardType"]) {
+	// Read file URLs from pasteboard
+	NSArray *classes = @[[NSURL class]];
+	NSDictionary *options = @{NSPasteboardURLReadingFileURLsOnlyKey: @YES};
+	NSArray *urls = [p readObjectsForClasses:classes options:options];
+	
+	if ([urls count] == 0) {
 		NSBeep();
 		return NO;
 	}
 	
+	// Convert URLs to paths
+	NSMutableArray *paths = [NSMutableArray arrayWithCapacity:[urls count]];
+	for (NSURL *url in urls) {
+		if ([url isFileURL]) {
+			[paths addObject:[url path]];
+		}
+	}
+	
 	// Let Taply decide which of the dropped file(s) can be used
-	[self handleDraggedPath:[p propertyListForType:NSFilenamesPboardType]];
+	[self handleDraggedPath:paths];
 	
 	// Update buttons and contextual menu
 	[self updateButtons];
@@ -492,7 +510,7 @@
 }
 
 - (void)concludeDragOperation:(id <NSDraggingInfo>)sender {
-	SetThemeCursor(kThemeArrowCursor);	
+	[[NSCursor arrowCursor] set];	
 }
 
 @end

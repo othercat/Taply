@@ -1,9 +1,8 @@
 
 #import <Cocoa/Cocoa.h>
-#import <Carbon/Carbon.h>
 #import "TaplyWindow.h"
 #import "TaplyPlaylist.h"
-#import "QTSoundFilePlayer.h"
+#import "AVSoundFilePlayer.h"
 #import "Timer.h"
 #import "TaplyPositionBar.h"
 #import "functions.h"
@@ -25,7 +24,7 @@
     IBOutlet NSMenu *cMenu;
     IBOutlet NSButton *prefsRememberVolume;
     IBOutlet NSButton *prefsRandomOrder;
-	QTSoundFilePlayer *player;
+	AVSoundFilePlayer *player;
 	unsigned int currentIndex;
 	TaplyPlaylist *playlist;
 	Timer *timer;
@@ -39,7 +38,7 @@
 -(IBAction)clearPlaylist:(id)sender;
 -(void)chooseSound:(id)sender;
 -(IBAction)playOrResume:(id)sender;
--(void)qtSoundFilePlayer:(QTSoundFilePlayer *)qtPlayer didFinishPlaying:(BOOL)success;
+-(void)avSoundFilePlayer:(AVSoundFilePlayer *)avPlayer didFinishPlaying:(BOOL)success;
 -(IBAction)revealFile:(id)sender;
 -(void)setNewPlayerPosition:(NSNumber *)numberOfSeconds;
 -(IBAction)setVolume:(id)sender;
