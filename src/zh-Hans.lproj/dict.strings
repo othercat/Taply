@@ -1,0 +1,38 @@
+/* NSOpenPanel title */
+"Choose sounds to play" = "请选择一个或多个音频文件播放";
+
+/* Error message when file is not a playable sound */
+"Error playing sound" = "音频文件 %@ 无法播放，文件格式可能不被 Taply 支持。";
+
+/* Contextual Menu Item "Quit" */
+"Quit" = "退出";
+
+/* Clear playlist */
+"Clear playlist" = "清空播放列表";
+
+/* File %d of %d  */
+"File %d of %d" = "第 %d 个，共 %d 个";
+
+/* Contextual Menu Item "Reveal in Finder" */
+"Reveal in Finder" = "在 Finder 中显示";
+
+/* Button title: Pause / resume playback */
+"Pause playback" = "暂停 / 继续播放";
+
+/* Button title: Play next file */
+"Play next file" = "播放下一个";
+
+/* Button title: Play previous file */
+"Play previous file" = "播放上一个";
+
+/* "Button title: Repeat the current file" */
+"Repeat the current file" = "循环播放当前文件";
+
+/* Button title: Help */
+"Help" = "帮助 / 信息";
+
+"Open prefs" = "偏好设置…";
+
+"Remember volume" = "记住音量设置";
+
+"Random order" = "随机顺序添加文件";

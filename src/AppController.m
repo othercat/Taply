@@ -28,6 +28,10 @@
     [prefsRememberVolume setTitle:STR_REMBR_VOL];
     [prefsRandomOrder setTitle:STR_RANDOM];
     
+	// Dark mode support: use system colors for text fields
+	[filename setBackgroundColor:[NSColor textBackgroundColor]];
+	[fileLength setBackgroundColor:[NSColor textBackgroundColor]];
+
 	timer = [Timer new];
 
     if (nil == [[NSUserDefaults standardUserDefaults] objectForKey:@"rememberVolume"]) {

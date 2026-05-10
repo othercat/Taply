@@ -100,6 +100,10 @@
 		225A495518FA8D3100EC41BE /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/dict.strings; sourceTree = "<group>"; };
 		225A495618FA8D4900EC41BE /* de */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/dict.strings; sourceTree = "<group>"; };
 		225A495718FA8D6400EC41BE /* sv */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/dict.strings; sourceTree = "<group>"; };
+		BB0000010000000000000001 /* zh-Hans */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/dict.strings"; sourceTree = "<group>"; };
+		BB0000010000000000000002 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = "zh-Hans"; path = "zh-Hans.lproj/Read me.html"; sourceTree = "<group>"; };
+		BB0000010000000000000003 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "zh-Hans"; path = "zh-Hans.lproj/help.png"; sourceTree = "<group>"; };
+		BB0000010000000000000004 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "zh-Hans"; path = "zh-Hans.lproj/help-2x.png"; sourceTree = "<group>"; };
 		228B6ED5067B8B420096540D /* doc-mp3.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = "doc-mp3.icns"; path = "Icons/doc-mp3.icns"; sourceTree = "<group>"; };
 		228B6ED6067B8B420096540D /* doc-wav.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = "doc-wav.icns"; path = "Icons/doc-wav.icns"; sourceTree = "<group>"; };
 		228B6ED7067B8B420096540D /* doc-aif.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = "doc-aif.icns"; path = "Icons/doc-aif.icns"; sourceTree = "<group>"; };
@@ -347,6 +351,7 @@
 				German,
 				Italian,
 				Swedish,
+				zh-Hans,
 				sv,
 				de,
 				fr,
@@ -434,6 +439,7 @@
 				225A494618FA89B500EC41BE /* de */,
 				225A494718FA89B600EC41BE /* fr */,
 				225A494818FA89B600EC41BE /* it */,
+				BB0000010000000000000002 /* zh-Hans */,
 			);
 			name = "Read me.html";
 			sourceTree = "<group>";
@@ -445,6 +451,7 @@
 				225A494E18FA8C7A00EC41BE /* de */,
 				225A494F18FA8C7C00EC41BE /* fr */,
 				225A495018FA8C7C00EC41BE /* it */,
+				BB0000010000000000000004 /* zh-Hans */,
 			);
 			name = "help-2x.png";
 			sourceTree = "<group>";
@@ -457,6 +464,7 @@
 				225A495518FA8D3100EC41BE /* it */,
 				225A495618FA8D4900EC41BE /* de */,
 				225A495718FA8D6400EC41BE /* sv */,
+				BB0000010000000000000001 /* zh-Hans */,
 			);
 			name = dict.strings;
 			sourceTree = "<group>";
@@ -468,6 +476,7 @@
 				22E910BF18FAA8C30016E32D /* de */,
 				22E910C018FAA8C60016E32D /* fr */,
 				22E910C118FAA8C70016E32D /* it */,
+				BB0000010000000000000003 /* zh-Hans */,
 			);
 			name = help.png;
 			sourceTree = "<group>";

@@ -2,24 +2,98 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8" />
-<title>Taply 1.7.1</title>
-<meta name="publisher" content="Carsten Blüm" />
-<link rel="stylesheet" href="../style.css" />
+<title>Taply 2.0.0-dev</title>
+<meta name="publisher" content="Carsten Blüm / Richard Li" />
 <style>
 
-div.img {
-	width: 586px;
-	height: 256px;
+body {
+	font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+	margin: 0;
+	padding: 20px;
+	background: #f5f5f5;
+	color: #333;
+	line-height: 1.6;
 }
 
-@media (-moz-min-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
-	div.img img {
-		display: none;
+@media (prefers-color-scheme: dark) {
+	body {
+		background: #1e1e1e;
+		color: #ccc;
 	}
-	div.img {
+	a { color: #6cb4ee; }
+}
+
+#frame {
+	max-width: 640px;
+	margin: 0 auto;
+	background: #fff;
+	padding: 30px;
+	border-radius: 8px;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+@media (prefers-color-scheme: dark) {
+	#frame {
+		background: #2a2a2a;
+		box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+	}
+}
+
+h1 {
+	font-size: 24px;
+	margin-top: 0;
+	color: #007AFF;
+}
+
+h2 {
+	font-size: 18px;
+	margin-top: 24px;
+	border-bottom: 1px solid #eee;
+	padding-bottom: 6px;
+}
+
+@media (prefers-color-scheme: dark) {
+	h2 { border-bottom-color: #444; }
+}
+
+a { color: #007AFF; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+ul { padding-left: 20px; }
+li { margin-bottom: 4px; }
+
+.img {
+	width: 586px;
+	height: 256px;
+	margin: 16px 0;
+}
+
+@media (-webkit-min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
+	.img img { display: none; }
+	.img {
 		background: url(help-2x.png) no-repeat;
 		background-size: 586px 256px;
 	}
+}
+
+.license {
+	font-size: 12px;
+	color: #666;
+	margin-top: 8px;
+}
+
+@media (prefers-color-scheme: dark) {
+	.license { color: #999; }
+}
+
+.badge {
+	display: inline-block;
+	background: #007AFF;
+	color: #fff;
+	padding: 2px 8px;
+	border-radius: 4px;
+	font-size: 12px;
+	margin-left: 8px;
 }
 
 </style>
@@ -28,56 +102,59 @@ div.img {
 
 <div id="frame">
 
-<header>
-<a href="http://www.bluem.net/en/mac/" target="_blank"><span>Carsten Blüm Mac Development</span></a>
-</header>
+<h1>Taply 2.0.0-dev <span class="badge">macOS moderne</span></h1>
 
-<h1>Taply 1.7.1</h1>
+<p>Taply est un lecteur de fichiers audio simple. Bien que de nombreux outils similaires existent pour macOS, Taply a été conçu pour être aussi minimal que possible : une petite fenêtre flottante qui se ferme automatiquement après la lecture, idéale pour parcourir rapidement un grand nombre de fichiers audio.</p>
 
-<p>Taply est un lecteur de fichier audio intuitif. Bien qu’il existe de nombreux outils similaires pour Mac OS X, je n’en ai pas trouvé un qui fasse exactement ce que je veux, c’est pourquoi j’ai écrit ce programme.</p>
-<p>La principale différence entre Taply et d’autres lecteur réside dans le fait que Taply n’est constitué que d’une petite fenêtre flottante et quitte dès la lecture finie. C’est pourquoi (à mon avis), c’est le parfait outil pour scanner un grand nombre de fichiers audio.</p>
+<h2>Nouveautés</h2>
+<p><strong>2.0.0-dev</strong> (maintenu par Richard Li) :</p>
+<ul>
+<li>Migration du moteur de lecture de QuickTime vers AVFoundation pour les builds modernes du SDK macOS</li>
+<li>Plateformes cibles : Intel macOS 10.14+ / Apple Silicon macOS 11.0+</li>
+<li>Binaire universel (x86_64 + arm64)</li>
+<li>Suppression des dépendances Carbon.framework et QuickTime.framework</li>
+<li>Prise en charge du mode sombre</li>
+<li>Ajout de la localisation en chinois simplifié</li>
+<li>Mise à jour de l'API de glisser-déposer (NSPasteboardTypeFileURL)</li>
+<li>Mise à jour des constantes AppKit obsolètes</li>
+</ul>
 
-<h2>Utilisation</h2>
-<p>Après avoir double-cliqué, vous verrez apparaître une fenêtre vous invitant à ouvrir un ou plusieurs fichiers audio. Taply jouera les fichiers sélectionnés (uniquement ceux lisibles) et quittera à la fin. </p>
-<p>Vous pouvez utilisez un menu contextuel par un clic-droit ou un control-clic sur la ligne de texte ou tout espace libre de la fenêtre, ce qui vous donne accès à tous les fichiers de la liste de lecture, au fichier en cours de lecture, à la suppression des autres fichiers de la liste, ou à quitter Taply.</p>
-<p>Si un ou plusieurs fichiers audio ou dossiers contenant des sons sont déplacés sur la fenêtre ou sur l’icône du programme, les fichiers sont ajoutés selon l’ordre de présentation dans la liste de lecture.</p>
-
-<br />
+<h2>Utilisation de Taply</h2>
+<p>Double-cliquez sur Taply pour ouvrir un panneau de sélection de fichiers. Sélectionnez un ou plusieurs fichiers audio pour commencer la lecture. Les fichiers qui ne peuvent pas être lus seront ignorés automatiquement, et Taply se fermera après la lecture de tous les fichiers.</p>
+<p>Faites un clic droit ou Control-clic sur un espace vide de la fenêtre pour accéder au menu contextuel : accéder directement à un fichier de la liste de lecture, vider la liste, ouvrir les préférences ou quitter Taply.</p>
+<p>Déposez des fichiers audio ou des dossiers contenant des fichiers audio sur la fenêtre ou l'icône de l'application pour les ajouter à la fin de la file de lecture.</p>
 
 <div class="img">
 <img src="help.png" width="586" height="256" />
 </div>
 
-<h2>Formats audio supportés</h2>
-<p>Les types de formats audio supportés dépendent de la version de votre système d’exploitation. Sous OS X 10.8 ou 10.9, Taply peut lire les formats AIFF, WAV, MP3, AAC (seulement sans DRM) et probablement d’autre formats audio.</p>
-
-<h2>Price</h2>
-<p>Taply est gratuit, mais si vous l’appréciez, peut-être que vous souhaitez <a href="http://www.bluem.net/jump/donations/">faire un don</a>.</p>
-
-<h2>Quoi de neuf dans version 1.7.1?</h2>
+<h2>Formats de fichiers pris en charge</h2>
+<p>La liste des formats audio pris en charge dépend de la version du système. Sur macOS 10.14 et versions ultérieures, au moins les formats suivants sont pris en charge :</p>
 <ul>
-<li>Bugfix: Restored the ability to drop a folder onto Taply’s icon.</li>
+<li>AIFF / AIFC</li>
+<li>WAV</li>
+<li>MP3</li>
+<li>M4A (AAC, sans DRM)</li>
 </ul>
-<p>Taply 1.7.1 est sorti le 12/12/2014.<br />
-Pour plus vieux versions, voir <a href="http://www.bluem.net/jump/taply-versions/" target="_blank">le site Web</a>, s’il vous plaît.</p>
 
-<h2>Contact / feed-back</h2>
-<p>Carsten Blüm (à exception de « PlayBufferedSoundFile », cf. ci-dessous), <a href="mailto:macapps@bluem.net?Subject=Taply%201.7.1%20Feedback">macapps@bluem.net</a><br />
-<a href="http://www.bluem.net/jump/taply/" target="_blank">Taply Homepage</a></p>
+<h2>Auteur original</h2>
+<p>Carsten Blüm — <a href="http://www.bluem.net/en/mac/" target="_blank">bluem.net</a><br />
+<a href="mailto:macapps@bluem.net">macapps@bluem.net</a></p>
 
-<h2>Complement légal</h2>
-<p>Utilisez ce programme à vos propres risques. Si pour une raison obscure il survient un dommage ou une perte de données à la suite de son utilisation (ce qui à mon avis est fort improbable), personne à part l’utilisateur de ce programme ne peut en être tenu pour responsable.
-</p>
+<h2>Mainteneur actuel</h2>
+<p>Richard Li — <a href="mailto:othercat@gmail.com">othercat@gmail.com</a></p>
 
-<h2>Licence concernant « PlayBufferedSoundFile »</h2>
-<p>Taply utilise « PlayBufferedSoundFile » de Kurt Revis (www.snoize.com), dont la licence d’utilisation est la suivante:</p>
-<p>Copyright © 2002-2003, Kurt Revis. All rights reserved.<br />
+<h2>Avertissement</h2>
+<p>Utilisez ce logiciel à vos propres risques. Si pour une obscure raison un dommage ou une perte de données pouvait résulter de son utilisation (ce qui est selon moi pratiquement impossible), la responsabilité vous incombe entièrement.</p>
+
+<h2>Note de licence concernant "PlayBufferedSoundFile"</h2>
+<p class="license">Taply utilise "PlayBufferedSoundFile" de Kurt Revis (www.snoize.com), qui est soumis aux conditions de licence suivantes :</p>
+<p class="license">Copyright &copy; 2002-2003, Kurt Revis. All rights reserved.<br />
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:<br />
-• Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.<br />
-• Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.<br />
-• Neither the name of Snoize nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.<br />
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-</p>
+&bull; Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.<br />
+&bull; Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.<br />
+&bull; Neither the name of Snoize nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.<br />
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p>
 
 </div>
 

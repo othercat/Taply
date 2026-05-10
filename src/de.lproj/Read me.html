@@ -2,24 +2,98 @@
 <html lang="de">
 <head>
 <meta charset="utf-8" />
-<title>Taply 1.7.1</title>
-<meta name="publisher" content="Carsten Blüm" />
-<link rel="stylesheet" href="../style.css" />
+<title>Taply 2.0.0-dev</title>
+<meta name="publisher" content="Carsten Blüm / Richard Li" />
 <style>
 
-div.img {
-	width: 586px;
-	height: 256px;
+body {
+	font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+	margin: 0;
+	padding: 20px;
+	background: #f5f5f5;
+	color: #333;
+	line-height: 1.6;
 }
 
-@media (-moz-min-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
-	div.img img {
-		display: none;
+@media (prefers-color-scheme: dark) {
+	body {
+		background: #1e1e1e;
+		color: #ccc;
 	}
-	div.img {
+	a { color: #6cb4ee; }
+}
+
+#frame {
+	max-width: 640px;
+	margin: 0 auto;
+	background: #fff;
+	padding: 30px;
+	border-radius: 8px;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+@media (prefers-color-scheme: dark) {
+	#frame {
+		background: #2a2a2a;
+		box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+	}
+}
+
+h1 {
+	font-size: 24px;
+	margin-top: 0;
+	color: #007AFF;
+}
+
+h2 {
+	font-size: 18px;
+	margin-top: 24px;
+	border-bottom: 1px solid #eee;
+	padding-bottom: 6px;
+}
+
+@media (prefers-color-scheme: dark) {
+	h2 { border-bottom-color: #444; }
+}
+
+a { color: #007AFF; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+ul { padding-left: 20px; }
+li { margin-bottom: 4px; }
+
+.img {
+	width: 586px;
+	height: 256px;
+	margin: 16px 0;
+}
+
+@media (-webkit-min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
+	.img img { display: none; }
+	.img {
 		background: url(help-2x.png) no-repeat;
 		background-size: 586px 256px;
 	}
+}
+
+.license {
+	font-size: 12px;
+	color: #666;
+	margin-top: 8px;
+}
+
+@media (prefers-color-scheme: dark) {
+	.license { color: #999; }
+}
+
+.badge {
+	display: inline-block;
+	background: #007AFF;
+	color: #fff;
+	padding: 2px 8px;
+	border-radius: 4px;
+	font-size: 12px;
+	margin-left: 8px;
 }
 
 </style>
@@ -28,56 +102,59 @@ div.img {
 
 <div id="frame">
 
-<header>
-<a href="http://www.bluem.net/de/mac/" target="_blank"><span>Carsten Blüm Mac Development</span></a>
-</header>
+<h1>Taply 2.0.0-dev <span class="badge">Modernes macOS</span></h1>
 
-<h1>Taply 1.7.1</h1>
+<p>Taply ist ein einfacher Audio-Datei-Player. Obwohl viele ähnliche Tools für macOS existieren, wurde Taply so minimalistisch wie möglich gestaltet: ein kleines schwebendes Fenster, das sich nach der Wiedergabe automatisch schließt – perfekt zum schnellen Durchsuchen einer großen Anzahl von Audiodateien.</p>
 
-<p>Taply ist eine simple Abspielsoftware für Audiodateien. Auch wenn es bereits einen ganzen Haufen ähnlicher Programme für Mac OS X gibt, war bzw. ist mir keines bekannt, das sich so verhält, wie ich es gerne hätte, und so wurde Taply geboren.
-</p>
-<p>Der – für meine Anwendungszwecke – wesentliche Unterschied zwischen Taply und anderen Playern besteht darin, dass die Benutzeroberfläche von Taply sich auf ein einziges, schwebendes Paletten-Fenster beschränkt und sich nach Wiedergabe der Datei(en) automatisch beendet. Insofern ist es für mich das ideale Tool, um mir aus dem Finder heraus auf die Schnelle einen Überblick über Audiodateien zu verschaffen.</p>
+<h2>Neuerungen</h2>
+<p><strong>2.0.0-dev</strong> (betreut von Richard Li):</p>
+<ul>
+<li>Wiedergabe-Engine von QuickTime auf AVFoundation migriert für moderne macOS-SDK-Builds</li>
+<li>Zielplattformen: Intel macOS 10.14+ / Apple Silicon macOS 11.0+</li>
+<li>Universelle Binärdatei (x86_64 + arm64)</li>
+<li>Abhängigkeiten von Carbon.framework und QuickTime.framework entfernt</li>
+<li>Unterstützung für Dunkelmodus</li>
+<li>Vereinfachte chinesische Lokalisierung hinzugefügt</li>
+<li>Ziehen-und-Ablegen-API aktualisiert (NSPasteboardTypeFileURL)</li>
+<li>Veraltete AppKit-Konstanten aktualisiert</li>
+</ul>
 
-<h2>Benutzung</h2>
-<p>Wird das Programm durch Doppelklick auf das Programmsymbol gestartet, wird ein Öffnen-Dialog angezeigt, um eine oder mehrere Audiodateien auszuwählen. Die gewählte(n) Datei(en) werden wiedergegeben (Dateiformate, die Taply nicht abspielen kann, werden übersprungen, nachdem eine Warnung angezeigt wurde), und anschließend beendet sich das Programm automatisch.</p>
-<p>Über ein Kontextmenü, das durch Rechts-Klick bzw. Control-Klick in einen freien Bereich oder auf das Textfeld aufgerufen werden kann, ist es möglich, direkt zu einer bestimmten Datei zu springen, die Wiedergabeliste zu löschen oder das Programm zu beenden.</p>
-<p>Zieht man Audiodateien (oder einen Ordner, der Audiodateien enthält) auf das Fenster oder das Programmsymbol während Taply bereits andere Dateien abspielt, wird bzw. werden die neue(n) Datei(en) an das Ende der Wiedergabe-Warteschlange angehängt.</p>
-
-<br />
+<h2>Taply verwenden</h2>
+<p>Doppelklicken Sie auf Taply, um ein Dateiauswahl-Fenster zu öffnen. Wählen Sie eine oder mehrere Audiodateien aus, um die Wiedergabe zu starten. Dateien, die nicht abgespielt werden können, werden automatisch übersprungen, und Taply beendet sich nach dem Abspielen aller Dateien.</p>
+<p>Rechtsklicken oder Control-Klicken Sie auf einen leeren Bereich im Fenster, um das Kontextmenü aufzurufen: Direkt zu einer beliebigen Datei in der Wiedergabeliste springen, die Wiedergabeliste leeren, Einstellungen öffnen oder Taply beenden.</p>
+<p>Ziehen Sie Audiodateien oder Ordner mit Audiodateien auf das Fenster oder das Anwendungssymbol, um sie am Ende der Wiedergabeliste hinzuzufügen.</p>
 
 <div class="img">
 <img src="help.png" width="586" height="256" />
 </div>
 
 <h2>Unterstützte Dateiformate</h2>
-<p>Die Liste der unterstützten Dateiformate kann von der jeweiligen Betriebssystemversion abhängen. Auf aktuellen Systemversionen sollten mindestens AIFF, WAV, MP3 und AAC (nur ohne DRM) wiedergegeben werden können.</p>
-
-<h2>Preis</h2>
-<p>Taply ist kostenlos. Aber wenn das Programm für Sie nützlich ist und Sie ein »Danke« senden möchten, gibt es dafür eine Reihe von Möglichkeiten. <a href="http://www.bluem.net/jump/donations/">Auf meiner Website erfahren Sie mehr hierzu.</a></p>
-
-<h2>Was ist neu in version 1.7.1?</h2>
+<p>Die Liste der unterstützten Audioformate hängt von der Systemversion ab. Auf macOS 10.14 und neuer werden mindestens die folgenden Formate unterstützt:</p>
 <ul>
-<li>Fehlerbehebung: Möglichkeit wiederhergestellt, einen Ordner per Drag &amp; Drop auf das Programm-Icon zu ziehen.</li>
+<li>AIFF / AIFC</li>
+<li>WAV</li>
+<li>MP3</li>
+<li>M4A (AAC, ohne DRM)</li>
 </ul>
-<p>Taply 1.7.1 wurde am 12.12.2014 veröffentlicht.<br />
-Informationen für ältere Versionen <a href="http://www.bluem.net/jump/taply-versions/" target="_blank">finden Sie auf der Website</a>.</p>
 
-<h2>Autor / Kontakt</h2>
-<p>Carsten Blüm (außer »PlayBufferedSoundFile«, s.u.), <a href="mailto:macapps@bluem.net?Subject=Taply%201.7.1%20Feedback">macapps@bluem.net</a><br />
-<a href="http://www.bluem.net/jump/taply/" target="_blank">Taply Homepage</a></p>
+<h2>Originalautor</h2>
+<p>Carsten Blüm — <a href="http://www.bluem.net/de/mac/" target="_blank">bluem.net</a><br />
+<a href="mailto:macapps@bluem.net">macapps@bluem.net</a></p>
 
-<h2>Disclaimer</h2>
-<p>Use this software at your own risk. If for some obscure reason any damage or data loss may arise from using it (which in my opinion is nearly impossible), it’s nobody elses problem than yours.</p>
+<h2>Aktueller Betreuer</h2>
+<p>Richard Li — <a href="mailto:othercat@gmail.com">othercat@gmail.com</a></p>
 
-<h2>Lizenzhinweis zu »PlayBufferedSoundFile«</h2>
-<p>Taply verwendet Kurt Revis' »PlayBufferedSoundFile« (www.snoize.com), dessen Lizenzbedingungen hier wiedergegeben sind:</p>
-<p>Copyright © 2002-2003, Kurt Revis. All rights reserved.<br />
+<h2>Haftungsausschluss</h2>
+<p>Verwenden Sie diese Software auf eigene Gefahr. Sollte aus irgendeinem Grund ein Schaden oder Datenverlust durch die Nutzung entstehen (was meiner Meinung nach nahezu unmöglich ist), liegt die Verantwortung allein bei Ihnen.</p>
+
+<h2>Lizenzhinweis zu "PlayBufferedSoundFile"</h2>
+<p class="license">Taply verwendet Kurt Revis' "PlayBufferedSoundFile" (www.snoize.com), das folgende Lizenzbedingungen hat:</p>
+<p class="license">Copyright &copy; 2002-2003, Kurt Revis. All rights reserved.<br />
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:<br />
-• Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.<br />
-• Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.<br />
-• Neither the name of Snoize nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.<br />
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-</p>
+&bull; Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.<br />
+&bull; Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.<br />
+&bull; Neither the name of Snoize nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.<br />
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p>
 
 </div>
 
