@@ -8,14 +8,20 @@ A lightweight macOS audio player. Drop in files or folders, play through a playl
 - **Current maintainer:** Richard Li (othercat@gmail.com)
 - **License:** See `LICENSE`
 
-Taply was originally built with QuickTime C APIs. In 2026, it was modernized to use AVFoundation, targeting macOS 10.14+ (Intel and Apple Silicon).
+Taply was originally built with QuickTime C APIs. In 2026, it was modernized to use AVFoundation and AVMIDIPlayer, targeting macOS 10.14+ (Intel and Apple Silicon).
 
 ## Supported Formats
 
+**Audio:**
 - MP3
 - M4A (AAC)
 - AIFF / AIFC
 - WAV
+
+**MIDI (preview only):**
+- MID / MIDI
+- RMI
+- KAR
 
 ## Building
 
@@ -35,15 +41,15 @@ cd src
   clean build
 ```
 
-The built app will be in the `DerivedData` build products directory. To copy it:
+The built app will be in the build products directory. To copy it:
 
 ```bash
-cp -R ~/Library/Developer/Xcode/DerivedData/*/Build/Products/Deployment/Taply.app ~/Downloads/
+cp -R src/build/Deployment/Taply.app ~/Downloads/
 ```
 
 ## Running
 
-Double-click `Taply.app`, or launch from the command line with audio files as arguments:
+Double-click `Taply.app`, or launch from the command line with files as arguments:
 
 ```bash
 open Taply.app --args /path/to/song.mp3 /path/to/another.m4a
@@ -59,17 +65,35 @@ open Taply.app --args /path/to/song.mp3 /path/to/another.m4a
 - Seek via position bar
 - Shuffle preference
 - Playlist with contextual menu
+- MIDI playback with optional custom sound bank
 - Dark mode support
 - Localized: English, German, French, Italian, Simplified Chinese
+
+## MIDI Sound Bank
+
+By default, Taply uses the system DLS synthesizer. To use a custom sound bank (.sf2, .sf3, .dls):
+
+```bash
+defaults write net.bluem.taply MIDISoundBankPath /path/to/soundbank.sf2
+```
+
+To revert to the system default:
+
+```bash
+defaults delete net.bluem.taply MIDISoundBankPath
+```
+
+Note: MIDI playback is a **preview backend** using Apple's AVMIDIPlayer. It does not support Yamaha XG SysEx parameters. For full XG parity, use Windows with foobar2000 + foo_midi + S-YXG50 VSTi.
 
 ## Architecture
 
 ```
 src/
   AppController.h/m        - Main controller (playlist, playback, UI)
-  AVSoundFilePlayer.h/m    - AVFoundation-based audio player wrapper
+  AVSoundFilePlayer.h/m    - AVFoundation audio player wrapper
+  MIDISoundFilePlayer.h/m  - AVMIDIPlayer MIDI player wrapper
   TaplyPlaylist.h/m        - Playlist (array of file paths)
-  Timer.h/m                - Background timer for elapsed time display
+  Timer.h/m                - Legacy timer (no longer used)
   TaplyWindow.h/m          - Custom NSWindow subclass
   TaplyPositionBar.h/m     - Custom seek bar
   TaplyGradientBox.h/m     - Gradient background view
@@ -81,13 +105,18 @@ src/
   fr.lproj/                - French localization
   it.lproj/                - Italian localization
   zh-Hans.lproj/           - Simplified Chinese localization
+docs/
+  TODO.md                  - Migration plan and progress
+  TESTING.md               - Manual smoke test checklist
+  MIDI_XG_RESEARCH.md      - MIDI/XG reference chain documentation
+  MIDI_XG_TESTING.md       - MIDI testing procedures
 ```
 
 ## Known Limitations
 
-- MIDI playback is not yet supported (planned for Phase 5).
-- The Timer class uses a detached background thread for UI updates (planned to be replaced with main-thread NSTimer).
-- Memory management is manual retain/release, not ARC.
+- MIDI playback uses AVMIDIPlayer (preview only, not XG parity)
+- Timer.h/m is legacy code no longer compiled but still in the project
+- Memory management is manual retain/release, not ARC
 
 ## Roadmap
 

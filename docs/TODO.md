@@ -49,16 +49,19 @@ MIDI / XG 是重要的后续方向，但不能打断第一阶段“先让 Taply 
 - 独立后续项目：Windows MIDI / XG Player prototype，用于和 foobar2000 + S-YXG50 做 parity testing。
 - PALDLL_DX9 后续整合：等待 Windows prototype 明确 API、延迟指标、文件布局和配置格式后再进入。
 
-## 1. 当前代码地图
+## 1. 代码地图（已更新至 2.0.0-dev）
 
-### 1.1 播放内核
+### 1.1 播放内核 ✅ 2026-05-10/11
 
-- `src/QTSoundFilePlayer.h`
-- `src/QTSoundFilePlayer.m`
-- `src/VirtualRingBuffer.h`
-- `src/VirtualRingBuffer.m`
+已迁移：
 
-这是最大阻塞点。`QTSoundFilePlayer` 使用 `QuickTime.framework`、`Movie`、`Media`、`SoundConverter`、`EnterMovies()`、`GetMediaSample()`、`OpenADefaultComponent()` 和 CoreAudio ring buffer。现代 macOS SDK 已无法继续依赖这套 QuickTime C API。迁移目标不是修补 QuickTime，而是替换为一个兼容旧调用方的现代播放器类。
+- `src/AVSoundFilePlayer.h/m` — AVAudioPlayer wrapper，支持 MP3/M4A/AIFF/WAV
+- `src/MIDISoundFilePlayer.h/m` — AVMIDIPlayer wrapper，支持 MIDI (preview) ✅ 2026-05-11
+
+历史参考（已从编译列表移除，文件仍保留）：
+
+- `src/QTSoundFilePlayer.h/m`
+- `src/VirtualRingBuffer.h/m`
 
 ### 1.2 App Controller 与 UI 逻辑
 
@@ -84,34 +87,27 @@ delegate didFinishPlaying:
 
 - `src/TaplyPlaylist.h`
 - `src/TaplyPlaylist.m`
-- `src/Timer.h`
+- `src/Timer.h` — 旧版后台线程 timer，已被 AppController 内的 NSTimer 替代，不再编译
 - `src/Timer.m`
 - `src/functions.h`
 - `src/functions.m`
 
-`TaplyPlaylist` 是路径数组封装。`Timer` 用后台线程更新 UI，现代化时应改成 main run loop `NSTimer` 或 `dispatch_source_t`，但不要在第一阶段阻塞播放器迁移。
+`TaplyPlaylist` 是路径数组封装。`Timer` 已不再使用，UI 更新改用主线程 NSTimer。
 
-### 1.4 Window 与控件
+### 1.4 Window 与控件 ✅ 2026-05-10
 
-- `src/TaplyWindow.h`
-- `src/TaplyWindow.m`
-- `src/TaplyPositionBar.h`
-- `src/TaplyPositionBar.m`
-- `src/TaplyGradientBox.h`
-- `src/TaplyGradientBox.m`
+- `src/TaplyWindow.h/m` — 已更新为新 AppKit 常量
+- `src/TaplyPositionBar.h/m` — 已适配 dark mode (系统动态颜色)
+- `src/TaplyGradientBox.h/m` — Carbon cursor 已替换为 NSCursor
 
-这里包含旧 AppKit 常量、手写绘制和拖放代理。`TaplyGradientBox` 与 `AppController` 都使用 Carbon `SetThemeCursor()`，后续应改为 `NSCursor`。
+### 1.5 Project 与资源 ✅ 2026-05-10/11
 
-### 1.5 Project 与资源
-
-- `src/Taply.xcodeproj/project.pbxproj`
-- `src/Info.plist`
+- `src/Taply.xcodeproj/project.pbxproj` — 已移除 QuickTime，已添加 AVFoundation 和 MIDI 文件
+- `src/Info.plist` — 已更新版本、deployment target、MIDI 文件类型
 - `src/Images.xcassets/`
 - `src/Icons/`
-- `src/*.lproj/`
+- `src/*.lproj/` — 含 English, de, fr, it, zh-Hans
 - `src/README.txt`
-
-工程内还链接了 `QuickTime.framework` 和 `Carbon.framework`。文档类型中仍包含 HFS type 与较宽泛的类型声明。
 
 ## 2. 不可妥协的要求
 
