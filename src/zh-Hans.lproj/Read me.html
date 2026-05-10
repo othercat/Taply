@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="zh-Hans">
 <head>
 <meta charset="utf-8" />
 <title>Taply 2.0.0-dev</title>
@@ -7,7 +7,7 @@
 <style>
 
 body {
-	font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+	font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Microsoft YaHei", sans-serif;
 	margin: 0;
 	padding: 20px;
 	background: #f5f5f5;
@@ -102,53 +102,53 @@ li { margin-bottom: 4px; }
 
 <div id="frame">
 
-<h1>Taply 2.0.0-dev <span class="badge">macOS moderno</span></h1>
+<h1>Taply 2.0.0-dev <span class="badge">现代 macOS 版</span></h1>
 
-<p>Taply è un lettore di file audio semplice. Sebbene molti strumenti simili esistano per macOS, Taply è stato progettato per essere il più minimale possibile: una piccola finestra flottante che si chiude automaticamente dopo la riproduzione, perfetta per scorrere rapidamente un gran numero di file audio.</p>
+<p>Taply 是一款简洁的音频文件播放器。虽然 macOS 上有许多类似的工具，但 Taply 的设计目标是尽可能小巧：一个浮动小窗口，播完自动退出，非常适合快速浏览大量音频文件。</p>
 
-<h2>Novità</h2>
-<p><strong>2.0.0-dev</strong> (mantenuto da Richard Li):</p>
+<h2>版本更新说明</h2>
+<p><strong>2.0.0-dev</strong>（由 Richard Li 维护）：</p>
 <ul>
-<li>Migrazione del motore di riproduzione da QuickTime ad AVFoundation per build moderne del SDK macOS</li>
-<li>Piattaforme target: Intel macOS 10.14+ / Apple Silicon macOS 11.0+</li>
-<li>Binario universale (x86_64 + arm64)</li>
-<li>Rimozione delle dipendenze Carbon.framework e QuickTime.framework</li>
-<li>Supporto per la modalità scura</li>
-<li>Aggiunta localizzazione in cinese semplificato</li>
-<li>Aggiornamento API drag-and-drop (NSPasteboardTypeFileURL)</li>
-<li>Aggiornamento costanti AppKit deprecate</li>
+<li>将播放内核从 QuickTime 迁移到 AVFoundation，支持现代 macOS SDK 构建</li>
+<li>目标平台：Intel macOS 10.14+ / Apple Silicon macOS 11.0+</li>
+<li>Universal binary（x86_64 + arm64）</li>
+<li>移除 Carbon.framework 和 QuickTime.framework 依赖</li>
+<li>适配深色模式</li>
+<li>新增简体中文界面</li>
+<li>更新拖放 API（NSPasteboardTypeFileURL）</li>
+<li>更新 deprecated AppKit 常量</li>
 </ul>
 
-<h2>Utilizzo di Taply</h2>
-<p>Fai doppio clic su Taply per aprire il pannello di selezione file. Seleziona uno o più file audio per avviare la riproduzione. I file che non possono essere riprodotti verranno saltati automaticamente e Taply si chiuderà dopo la riproduzione di tutti i file.</p>
-<p>Fai clic destro o Control-clic su uno spazio vuoto nella finestra per accedere al menu contestuale: vai direttamente a un file nella playlist, svuota la playlist, apri le preferenze o esci da Taply.</p>
-<p>Trascina file audio o cartelle contenenti file audio sulla finestra o sull'icona dell'applicazione per aggiungerli alla fine della coda di riproduzione.</p>
+<h2>使用方法</h2>
+<p>双击 Taply，会弹出文件选择面板，选择一个或多个音频文件即可开始播放。无法播放的文件会自动跳过，播放完毕后 Taply 会自动退出。</p>
+<p>在窗口空白处右键或 Control 点击，可以呼出快捷菜单：直接跳转到播放列表中的任意文件、清空播放列表、打开偏好设置或退出 Taply。</p>
+<p>将音频文件或包含音频的文件夹拖放到窗口或应用图标上，文件会被添加到播放队列末尾。</p>
 
 <div class="img">
 <img src="help.png" width="586" height="256" />
 </div>
 
-<h2>Formati di file supportati</h2>
-<p>L'elenco dei formati audio supportati dipende dalla versione del sistema. Su macOS 10.14 e versioni successive, sono supportati almeno i seguenti formati:</p>
+<h2>支持的文件格式</h2>
+<p>支持的音频格式取决于系统版本。在 macOS 10.14 及以上版本，至少支持以下格式：</p>
 <ul>
 <li>AIFF / AIFC</li>
 <li>WAV</li>
 <li>MP3</li>
-<li>M4A (AAC, senza DRM)</li>
+<li>M4A（AAC，无 DRM）</li>
 </ul>
 
-<h2>Autore originale</h2>
+<h2>原作者</h2>
 <p>Carsten Blüm — <a href="http://www.bluem.net/en/mac/" target="_blank">bluem.net</a><br />
 <a href="mailto:macapps@bluem.net">macapps@bluem.net</a></p>
 
-<h2>Mantenitore attuale</h2>
+<h2>当前维护者</h2>
 <p>Richard Li — <a href="mailto:othercat@gmail.com">othercat@gmail.com</a></p>
 
-<h2>Avvertenza</h2>
-<p>Utilizza questo software a tuo rischio. Se per qualche oscuro motivo dovessero derivare danni o perdite di dati dall'utilizzo (cosa che a mio parere è quasi impossibile), la responsabilità è esclusivamente tua.</p>
+<h2>免责声明</h2>
+<p>使用本软件风险自担。如因使用本软件造成任何损害或数据损失（作者认为这几乎不可能），责任由使用者自行承担。</p>
 
-<h2>Nota di licenza riguardante "PlayBufferedSoundFile"</h2>
-<p class="license">Taply utilizza "PlayBufferedSoundFile" di Kurt Revis (www.snoize.com), soggetto alle seguenti condizioni di licenza:</p>
+<h2>PlayBufferedSoundFile 许可声明</h2>
+<p class="license">Taply 使用了 Kurt Revis 的 "PlayBufferedSoundFile"（www.snoize.com），其许可条件如下：</p>
 <p class="license">Copyright &copy; 2002-2003, Kurt Revis. All rights reserved.<br />
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:<br />
 &bull; Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.<br />

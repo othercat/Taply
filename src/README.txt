@@ -1,6 +1,7 @@
-This is the Xcode project for Taply 1.7.1, release December 2014.
+This is the Xcode project for Taply 2.0.0-dev, maintained by Richard Li (othercat@gmail.com).
 
-The code is old and uses legacy frameworks. Do not contact me for help or for asking any questions on the code.
+Original version 1.7.1 by Carsten Blüm, released December 2014.
+Modernized in 2026: migrated from QuickTime to AVFoundation, targeting macOS 10.14+.
 
 -----
 

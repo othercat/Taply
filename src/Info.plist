@@ -137,10 +137,12 @@
 	<string>APPL</string>
 	<key>CFBundleSignature</key>
 	<string>tplY</string>
+	<key>CFBundleShortVersionString</key>
+	<string>2.0.0-dev</string>
 	<key>CFBundleVersion</key>
-	<string>1.7.1</string>
+	<string>2.0.0-dev</string>
 	<key>LSMinimumSystemVersion</key>
-	<string>10.6</string>
+	<string>10.14</string>
 	<key>LSUIElement</key>
 	<string>true</string>
 	<key>NSMainNibFile</key>

@@ -7,16 +7,16 @@
 #pragma mark Drag&Drop Methods
 
 -(unsigned int) draggingEntered:(id <NSDraggingInfo>)sender {	
-	SetThemeCursor(kThemeCopyArrowCursor);
+	[[NSCursor dragCopyCursor] set];
 	return NSDragOperationGeneric;
 }
 
 -(void)draggingExited:(id <NSDraggingInfo>)sender {	
-	SetThemeCursor(kThemeArrowCursor);
+	[[NSCursor arrowCursor] set];
 }
 
 - (unsigned int) draggingUpdated:(id <NSDraggingInfo>)sender {	
-	SetThemeCursor(kThemeCopyArrowCursor);
+	[[NSCursor dragCopyCursor] set];
 	return NSDragOperationEvery;
 }
 
@@ -25,7 +25,7 @@
 }
 
 - (void)concludeDragOperation:(id <NSDraggingInfo>)sender {
-	SetThemeCursor(kThemeArrowCursor);	
+	[[NSCursor arrowCursor] set];	
 }
 
 @end

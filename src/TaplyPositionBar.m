@@ -30,23 +30,11 @@
 - (id)initWithFrame:(NSRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-		bgColor = [NSColor colorWithCalibratedRed:0.78
-											green:0.78
-											 blue:0.78
-											alpha:1.0];
-		fgColor = [NSColor colorWithCalibratedRed:0.27
-											green:0.27
-											 blue:0.27
-											alpha:1.0];	
-		[bgColor retain];
-		[fgColor retain];
     }
     return self;
 }
 
 -(void)dealloc {
-	[bgColor release];
-	[fgColor release];
     [controller release];
 	[super dealloc];
 }
@@ -58,10 +46,11 @@
 }
 
 - (void)drawRect:(NSRect)rect {
-	[bgColor set];
+	// Use system colors that adapt to dark/light mode
+	[[NSColor separatorColor] set];
 	NSRectFill(NSMakeRect(0, 4, [self bounds].size.width, 4));
 
-	[fgColor set];
+	[[NSColor controlTextColor] set];
 	if (elapsedLength > 1) {
 		NSRectFill(NSMakeRect(0, 4, elapsedLength, 4));
 	} else if (elapsedLength > 0.2) {

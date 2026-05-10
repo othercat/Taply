@@ -3,8 +3,6 @@
 
 @interface TaplyPositionBar : NSView {
 
-	NSColor *bgColor;
-	NSColor *fgColor;
 	float duration;
 	float elapsedLength; // Current width of the "elapsed" bar
 	id controller;
