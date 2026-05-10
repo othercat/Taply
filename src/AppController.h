@@ -3,6 +3,7 @@
 #import "TaplyWindow.h"
 #import "TaplyPlaylist.h"
 #import "AVSoundFilePlayer.h"
+#import "MIDISoundFilePlayer.h"
 #import "TaplyPositionBar.h"
 #import "functions.h"
 
@@ -23,7 +24,7 @@
     IBOutlet NSMenu *cMenu;
     IBOutlet NSButton *prefsRememberVolume;
     IBOutlet NSButton *prefsRandomOrder;
-	AVSoundFilePlayer *player;
+	id player;
 	unsigned int currentIndex;
 	TaplyPlaylist *playlist;
 	NSTimer *uiTimer;
@@ -38,6 +39,7 @@
 -(void)chooseSound:(id)sender;
 -(IBAction)playOrResume:(id)sender;
 -(void)avSoundFilePlayer:(AVSoundFilePlayer *)avPlayer didFinishPlaying:(BOOL)success;
+-(void)midiSoundFilePlayer:(MIDISoundFilePlayer *)midiPlayer didFinishPlaying:(BOOL)success;
 -(IBAction)revealFile:(id)sender;
 -(void)setNewPlayerPosition:(NSNumber *)numberOfSeconds;
 -(IBAction)setVolume:(id)sender;

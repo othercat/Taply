@@ -124,6 +124,32 @@
 			<key>LSTypeIsPackage</key>
 			<false/>
 		</dict>
+		<dict>
+			<key>CFBundleTypeExtensions</key>
+			<array>
+				<string>mid</string>
+				<string>midi</string>
+				<string>rmi</string>
+				<string>kar</string>
+			</array>
+			<key>CFBundleTypeIconFile</key>
+			<string>doc-midi.icns</string>
+			<key>CFBundleTypeMIMETypes</key>
+			<array>
+				<string>audio/midi</string>
+				<string>audio/x-midi</string>
+			</array>
+			<key>CFBundleTypeName</key>
+			<string>MIDI File</string>
+			<key>CFBundleTypeOSTypes</key>
+			<array>
+				<string>Midi</string>
+			</array>
+			<key>CFBundleTypeRole</key>
+			<string>Viewer</string>
+			<key>LSTypeIsPackage</key>
+			<false/>
+		</dict>
 	</array>
 	<key>CFBundleName</key>
 	<string>Taply</string>

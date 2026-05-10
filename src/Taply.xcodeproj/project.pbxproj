@@ -22,8 +22,10 @@
 		22231A3F0CF0A95200C26496 /* functions.m in Sources */ = {isa = PBXBuildFile; fileRef = 22231A3D0CF0A95200C26496 /* functions.m */; };
 		22231B250CF0EFAE00C26496 /* TaplyGradientBox.h in Headers */ = {isa = PBXBuildFile; fileRef = 22231B230CF0EFAE00C26496 /* TaplyGradientBox.h */; };
 		AA0000020000000000000003 /* AVSoundFilePlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = AA0000020000000000000001 /* AVSoundFilePlayer.h */; };
+		CC0000010000000000000003 /* MIDISoundFilePlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = CC0000010000000000000001 /* MIDISoundFilePlayer.h */; };
 		22231B260CF0EFAE00C26496 /* TaplyGradientBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 22231B240CF0EFAE00C26496 /* TaplyGradientBox.m */; };
 		AA0000020000000000000004 /* AVSoundFilePlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0000020000000000000002 /* AVSoundFilePlayer.m */; };
+		CC0000010000000000000004 /* MIDISoundFilePlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CC0000010000000000000002 /* MIDISoundFilePlayer.m */; };
 		2226B8BF07280985005E1EE2 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2226B8BE07280985005E1EE2 /* Carbon.framework */; };
 		223892EB18748B7100A6DFF9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 223892EA18748B7100A6DFF9 /* Images.xcassets */; };
 		2246C2870C610FC90099490D /* TaplyPositionBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 2246C2850C610FC90099490D /* TaplyPositionBar.h */; };
@@ -134,7 +136,9 @@
 		35BE1E92086EC55D00DD3BDE /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = /System/Library/Frameworks/AudioToolbox.framework; sourceTree = "<absolute>"; };
 		AA0000010000000000000001 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = /System/Library/Frameworks/AVFoundation.framework; sourceTree = "<absolute>"; };
 		AA0000020000000000000001 /* AVSoundFilePlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVSoundFilePlayer.h; sourceTree = "<group>"; };
+		CC0000010000000000000001 /* MIDISoundFilePlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIDISoundFilePlayer.h; sourceTree = "<group>"; };
 		AA0000020000000000000002 /* AVSoundFilePlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVSoundFilePlayer.m; sourceTree = "<group>"; };
+		CC0000010000000000000002 /* MIDISoundFilePlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIDISoundFilePlayer.m; sourceTree = "<group>"; };
 		35F08299088D1DC300F65880 /* Timer.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = Timer.h; sourceTree = "<group>"; };
 		35F0829A088D1DC300F65880 /* Timer.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = Timer.m; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Taply.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Taply.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -173,6 +177,7 @@
 				35F08299088D1DC300F65880 /* Timer.h */,
 				35F0829A088D1DC300F65880 /* Timer.m */,
 				AA0000030000000000000001 /* AVSoundFilePlayer */,
+				CC0000010000000000000005 /* MIDISoundFilePlayer */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -205,6 +210,15 @@
 				8D1107320486CEB800E47090 /* Taply.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		CC0000010000000000000005 /* MIDISoundFilePlayer */ = {
+			isa = PBXGroup;
+			children = (
+				CC0000010000000000000001 /* MIDISoundFilePlayer.h */,
+				CC0000010000000000000002 /* MIDISoundFilePlayer.m */,
+			);
+			name = MIDISoundFilePlayer;
 			sourceTree = "<group>";
 		};
 		AA0000030000000000000001 /* AVSoundFilePlayer */ = {
@@ -303,6 +317,7 @@
 				221F061E067A18BB0029B328 /* AppController.h in Headers */,
 				22DC43050726F00B003BB824 /* TaplyPlaylist.h in Headers */,
 				AA0000020000000000000003 /* AVSoundFilePlayer.h in Headers */,
+				CC0000010000000000000003 /* MIDISoundFilePlayer.h in Headers */,
 				35F0829B088D1DC300F65880 /* Timer.h in Headers */,
 				2246C2870C610FC90099490D /* TaplyPositionBar.h in Headers */,
 				22231A3E0CF0A95200C26496 /* functions.h in Headers */,
@@ -414,6 +429,7 @@
 				221F061F067A18BB0029B328 /* AppController.m in Sources */,
 				22DC43060726F00B003BB824 /* TaplyPlaylist.m in Sources */,
 				AA0000020000000000000004 /* AVSoundFilePlayer.m in Sources */,
+				CC0000010000000000000004 /* MIDISoundFilePlayer.m in Sources */,
 				35F0829C088D1DC300F65880 /* Timer.m in Sources */,
 				2246C2880C610FC90099490D /* TaplyPositionBar.m in Sources */,
 				22231A3F0CF0A95200C26496 /* functions.m in Sources */,

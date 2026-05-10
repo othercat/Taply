@@ -87,7 +87,9 @@
 	if (newVolume < 0.0) {
 		newVolume = 0.0;
 	}
-	[player setVolume:newVolume];	
+	if ([player respondsToSelector:@selector(setVolume:)]) {
+		[player setVolume:newVolume];
+	}
 	[volumeSlider setFloatValue: newVolume];	
 }
 
@@ -96,12 +98,16 @@
 	if (newVolume > 1.0) {
 		newVolume = 1.0;
 	}
-	[player setVolume:newVolume];	
+	if ([player respondsToSelector:@selector(setVolume:)]) {
+		[player setVolume:newVolume];
+	}
 	[volumeSlider setFloatValue: newVolume];	
 }
 
 -(IBAction)setVolume:(id)sender {
-	[player setVolume:[sender floatValue]];
+	if ([player respondsToSelector:@selector(setVolume:)]) {
+		[player setVolume:[sender floatValue]];
+	}
 }
 
 -(IBAction)restartTrack:(id)sender {
@@ -117,21 +123,42 @@
 	}
 }
 
+-(BOOL)isMIDIFile:(NSString *)path {
+	NSString *ext = [[path pathExtension] lowercaseString];
+	return [ext isEqualToString:@"mid"] || [ext isEqualToString:@"midi"] ||
+	       [ext isEqualToString:@"rmi"] || [ext isEqualToString:@"kar"];
+}
+
 -(void)startPlay {
 
-	AVSoundFilePlayer *avPlayer;
+	id newPlayer;
 	
 	if (currentIndex >= [playlist count]) {
 		// Nothing more to play >> Quit
 		[NSApp terminate:self];
 	}
 
-	avPlayer = [[AVSoundFilePlayer alloc] initWithContentsOfFile:[playlist soundAtIndex:currentIndex]];
-	[avPlayer setDelegate:self];
-	[avPlayer setVolume:[volumeSlider floatValue]];
-	[avPlayer play];
+	NSString *currentPath = [playlist soundAtIndex:currentIndex];
+	if ([self isMIDIFile:currentPath]) {
+		// MIDI file — use MIDISoundFilePlayer
+		NSString *bankPath = [[NSUserDefaults standardUserDefaults] stringForKey:@"MIDISoundBankPath"];
+		NSURL *bankURL = nil;
+		if (bankPath && [[NSFileManager defaultManager] fileExistsAtPath:bankPath]) {
+			bankURL = [NSURL fileURLWithPath:bankPath];
+		}
+		newPlayer = [[MIDISoundFilePlayer alloc] initWithContentsOfFile:currentPath soundBankURL:bankURL];
+	} else {
+		// Regular audio file — use AVSoundFilePlayer
+		newPlayer = [[AVSoundFilePlayer alloc] initWithContentsOfFile:currentPath];
+	}
 
-	if ([avPlayer isPlaying]) {
+	[newPlayer setDelegate:self];
+	if ([newPlayer respondsToSelector:@selector(setVolume:)]) {
+		[newPlayer setVolume:[volumeSlider floatValue]];
+	}
+	[newPlayer play];
+
+	if ([newPlayer isPlaying]) {
 		float duration;
 		playing = YES;
 		[buttonPlay setState: NSControlStateValueOff];
@@ -142,8 +169,8 @@
 		[fileIcon setImage:icon];
 
 		[self setFilename];
-		duration = [avPlayer duration];
-		player = avPlayer;
+		duration = [newPlayer duration];
+		player = newPlayer;
 		[self updateButtons];
 		
 		// Display the track's length
@@ -158,7 +185,7 @@
 		playing = NO;
 		[buttonPlay setState: NSControlStateValueOn];
 		NSString *_filename = [NSString stringWithString:[[playlist soundAtIndex:currentIndex] lastPathComponent]];
-		[avPlayer release];
+		[newPlayer release];
 		[elapsedSeconds setTitle:@""];
 		[playlist remove:currentIndex];
 		NSBeginAlertSheet(nil, @"OK", nil, nil, window, self,
@@ -360,6 +387,27 @@
 	if (success) {
 		// Sound finished completely
         currentIndex ++;
+	}
+
+	[self startPlay];
+}
+
+-(void)midiSoundFilePlayer:(MIDISoundFilePlayer *)midiPlayer
+		 didFinishPlaying:(BOOL)success {
+
+	if (success && [buttonLoop state] == NSControlStateValueOn) {
+		// LOOP
+			[midiPlayer play];
+		return;
+	}
+
+	[self stopUITimer];
+	[filename setStringValue:@""];
+	player = nil;
+
+	if (success) {
+		// Sound finished completely
+		currentIndex ++;
 	}
 
 	[self startPlay];
