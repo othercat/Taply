@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git switch *)",
+      "Bash(/Applications/Xcode_16.4.app/Contents/Developer/usr/bin/xcodebuild -project src/Taply.xcodeproj -target Taply -configuration Development -sdk macosx build)",
+      "Bash(git checkout *)",
+      "Bash(/Users/lirichard/.localenv_py311/bin/python3 *)",
+      "Bash(/Applications/Xcode_16.4.app/Contents/Developer/usr/bin/xcodebuild -project Taply.xcodeproj -target Taply -configuration Development -sdk macosx build)",
+      "Bash(lipo *)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(/Applications/Xcode_16.4.app/Contents/Developer/usr/bin/xcodebuild -project Taply.xcodeproj -target Taply -configuration Deployment -sdk macosx ARCHS=\"x86_64 arm64\" ONLY_ACTIVE_ARCH=NO clean build)"
+    ]
+  }
+}
